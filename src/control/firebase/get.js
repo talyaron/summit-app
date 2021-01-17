@@ -22,6 +22,6 @@ export const listenToTests = (props) => {
             setTests(testsArray);
         })
     } catch (e) {
-        console.error(e)
+        console.error(e);
     }
 }

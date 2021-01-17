@@ -9,5 +9,6 @@ const Course = {
         ]
     },
     students:[{'user object'}],
-    active:'boolean'
+    active:'boolean',
+    center:'sport/theater'
 }

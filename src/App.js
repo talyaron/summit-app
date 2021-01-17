@@ -12,7 +12,7 @@ import { listenToTests } from './control/firebase/get';
 function App() {
   const [tests, setTests] = useState([])
 
-  useEffect(() => {
+  useEffect(() => { //first time run
     listenToTests({setTests})
   }, [])
 
