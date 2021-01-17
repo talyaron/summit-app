@@ -9,5 +9,5 @@ const Course = {
         ]
     },
     students:[{'user object'}],
-    active:'bollean'
+    active:'boolean'
 }
