@@ -26,6 +26,8 @@ export function loginGoogle() {
             const user = result.user;
             console.log(user)
 
+            //redirect to main
+
         }).catch((e) => {
 
             console.error(e)

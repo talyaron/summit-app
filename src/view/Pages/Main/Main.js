@@ -22,7 +22,7 @@ export default function Main() {
     //save current path to session storage in case of ridirect
     let currentPath = location.pathname;
     sessionStorage.setItem('path', currentPath);
-    
+
 
     fb.auth().onAuthStateChanged(function (userDB) {
       if (userDB) {
@@ -40,19 +40,24 @@ export default function Main() {
   useEffect(() => {
     console.log(user)
     if (user) {
-      //get user information 
+      //get user information from the DB
       //check his role in the system
       //check if the user is allowed in this page. if not, redirect to "unauthorized" screen
     }
   }, [user])
+  if (user) {
+    return (
 
-  return (
+      <div >
 
-    <div >
-      <Header />
-      <h1>Main</h1>
-    </div>
-  )
+        <Header />
+        <h1>Main</h1>
+      </div>
+    )
+
+  } else {
+    return (<h1>unauthorized - go to login</h1>)
+  }
 }
 
 
