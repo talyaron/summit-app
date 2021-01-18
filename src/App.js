@@ -1,36 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import './App.css'
+import React, {useEffect, setState} from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 //components
-import Main from './view/Pages/Main/Main';
+import Login from './view/Pages/Login/Login';
+import Main from './view/Pages/Main/Main'
 
-//control
-import { listenToTests } from './control/firebase/get';
+//functions
+import {onAuth} from './control/firebase/login'
 
+export default function App() {
 
+  // const [user, setUser] = useState({})
 
-function App() {
-  const [tests, setTests] = useState([])
-
-  useEffect(() => { //first time run
-    listenToTests({setTests})
+  useEffect(() => {
+    // onAuth()
+    return () => {
+      // cleanup
+    }
   }, [])
 
+
   return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Main</Link>
+            </li>
+            <li>
+              <Link to="/Login">Login</Link>
+            </li>
+          </ul>
+        </nav>
 
-    <div >
-      <h1>Hi</h1>
-      {
-        tests.map(test => {
-          return (<p key={test.id}>{test.title}</p>)
-        })
-      }
-      <Main />
-    </div>
-  )
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Main />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
-
-
-
-
-export default App;

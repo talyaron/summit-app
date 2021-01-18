@@ -1,10 +1,13 @@
 import React from 'react';
 import './Login.css';
 
-export const Login = () => {
+//controls;
+import {loginGoogle} from '../../../control/firebase/login'
+
+export default function Login() {
     return (
         <div>
-            Login
+            <button onClick={loginGoogle}>Google Login</button>
         </div>
     )
 }

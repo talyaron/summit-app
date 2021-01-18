@@ -9,3 +9,4 @@ firebase.initializeApp(firebaseConfig);
 
 export const storage = firebase.storage();
 export const DB = firebase.firestore();
+export const fb = firebase;
