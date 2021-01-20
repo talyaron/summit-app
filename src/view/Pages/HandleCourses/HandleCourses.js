@@ -1,7 +1,21 @@
 import React, { useState } from 'react'
 import './HandleCourses.css';
+import { DB } from '../../../control/firebase/firebase.js';
 
-const coursesDB = [{
+const courseList = DB.collection("courses")
+const coursesDB = []
+
+courseList.get().then((querySnapshot) => {
+    
+    querySnapshot.forEach((doc) => {
+        coursesDB.push({...doc.data() })
+    })
+    console.log(coursesDB)
+ })
+
+
+
+/*const coursesDB = [{
     name: 'Basketball',
     instructors: [],
     date: {
@@ -49,26 +63,24 @@ const coursesDB = [{
     ],
     active: true,
     center: 'sport'
-}]
+}]*/
 
 
 
 const HandleCourses = () => {
 
 
-    const [courses, setCourses] = useState(coursesDB)
     return (
         <div>
             
-            {courses.map((course, index) => {
+            {coursesDB.map((course, index) => {
                 return (
-                    <div class='course' key={index}>
+                    <div className='course' key={index}>
                         {course.name}
-                        <br />
+                        <br/>
                         {course.instructors}
-                        {course.date.starting}-{course.date.end}
-                        <br />
-                        {course.date.repeat[0].hoursStart}-{course.date.repeat[0].hoursEnd}
+                        <br/>
+                        {Date(course.dates.start.seconds)}
                         <br/>
                         <img class='image' src={course.image} alt={"picture of" + course.name}/>
                     </div>
