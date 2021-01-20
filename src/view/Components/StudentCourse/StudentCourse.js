@@ -12,38 +12,54 @@ export const StudentCourse = () => {
          */
     }
 
+    //set useStates 
     const [courseName, setCourseName]=useState('');
     const [imageSource,setImageSource]=useState('');
-    //this needs to be an array
-    const [instructor, setInstructor]=useState('');
+    const [instructors, setInstructors]=useState([]);
     const [dates, setDates]=useState({});
+    const [joinOrLeaveClass, setJoinOrLeaveClass]=useState('Join');
     
+    //collect DB data of course for useState
     DB.collection('courses').doc(`${courseId}`).onSnapshot(courseDB=>{
         setCourseName(courseDB.data().name);
         setImageSource(courseDB.data().image);
-        setInstructor(courseDB.data().instructors)
+        setInstructors(courseDB.data().instructors);
+        setDates(courseDB.data().dates);
     })
 
+    function inClass(){
+        //checks if the user is in the class already
+        //need user info for this
+        //if not in class, setJoinOrLeaveClass to 'Join'
+        //else set it to 'Leave'
+    }
 
+    function goToChat(){
+        //directs to the chat page with the teacher
+        //needs to obtain the info of the instructor so it knows what chat to open
+    }
+    
+    function joinOrLeave(){
+        //if the user is in the class already, removes the course from their course list
+        //if the user is not in the class, adds the course to their course list
+    }
 
     return(
         <div id="studentCourse">
-
+            <img src={imageSource}></img>
+            <p id="courseName">{courseName}</p>
+            <button id="chat" onClick={goToChat}>Chat</button>
+            <p id="instructorAndDate">
+                {/*need to check how set these states */}
+                <span id="date">{dates}</span>
+                <span id="instructors">{instructors,map((instructor, index=>{
+                    return(<p key={index}>{instructor}</p>)
+                }))}
+                </span>
+            </p>
+            <button id="joinOrLeave" onClick={joinOrLeave}>{joinOrLeaveClass}</button>  
         </div>
     )
 
 
 }
-
-/*
-function studentCourse(){
-        return(
-            <div className="course">
-           <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC_HxGflb-53zVTxUlG_TbBi6aPpPVoarXzQ&usqp=CAU'/>
-    <p><button className="chat">chat</button> Tennis</p>
-    <p> <span className="dateAndTime">Wednesday, 2:00pm - 3:00pm</span><span className="instructorName">Avi</span></p>
-    <p className="notes">Bring a racket!</p>
-        </div>
-        )
-    }
-*/
