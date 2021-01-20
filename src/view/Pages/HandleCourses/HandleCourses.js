@@ -3,7 +3,7 @@ import './HandleCourses.css';
 
 const coursesDB = [{
     name: 'Basketball',
-    instructors: [],
+    instructors: ['Tal Yaron'],
     date: {
         starting: '2/7',
         end: '3/7',
@@ -28,7 +28,7 @@ const coursesDB = [{
 },
 {
     name: 'Tennis',
-    instructors: [],
+    instructors: ['Jacob Karlovsky'],
     date: {
         starting: '2/8',
         end: '3/8',
@@ -66,6 +66,7 @@ const HandleCourses = () => {
                         {course.name}
                         <br />
                         {course.instructors}
+                        <br/>
                         {course.date.starting}-{course.date.end}
                         <br />
                         {course.date.repeat[0].hoursStart}-{course.date.repeat[0].hoursEnd}
