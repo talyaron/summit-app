@@ -1,7 +1,17 @@
-.course {
-   border: 2px solid black; 
+.courseBox {
+   border: 2px solid black;
+   display: grid;
+   grid-template-columns: 40% 20% 20% 20%;
+   text-align: right;
 }
 
 .image {
    width: 100px;
 }
+
+.box2{
+   display: inline-block;
+   height: 100%;
+}
+
+

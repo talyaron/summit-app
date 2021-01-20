@@ -12,24 +12,37 @@ courseList.get().then((querySnapshot) => {
     })
     console.log(coursesDB)
  })
- 
+
 
 const HandleCourses = () => {
 
 
     return (
         <div>
-            
+            <h1 style={{textAlign: 'center'}}>Courses</h1>
+            <div>
+                <select name="cars" id="cars" multiple>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
             {coursesDB.map((course, index) => {
                 return (
-                    <div className='course' key={index}>
-                        {course.name}
-                        <br/>
-                        {course.instructors}
-                        <br/>
-                        {Date(course.dates.start.seconds)}
-                        <br/>
-                        <img class='image' src={course.image} alt={"picture of" + course.name}/>
+                    <div className='courseBox' key={index}>
+                        <div className="box2">
+                            {Date(course.dates.start.seconds)}
+                        </div>
+                        <div className="box2">
+                            {course.instructors}
+                        </div>
+                        <div className="box2">
+                            {course.name}
+                        </div>
+                        <div className="box2">
+                            <img className='image' src={course.image} alt={"picture of" + course.name}/>
+                        </div>
                     </div>
                 )
             })}
