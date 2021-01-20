@@ -17,7 +17,7 @@ courseList.get().then((querySnapshot) => {
 
 /*const coursesDB = [{
     name: 'Basketball',
-    instructors: ['Tal Yaron'],
+    instructors: [],
     date: {
         starting: '2/7',
         end: '3/7',
@@ -42,7 +42,7 @@ courseList.get().then((querySnapshot) => {
 },
 {
     name: 'Tennis',
-    instructors: ['Jacob Karlovsky'],
+    instructors: [],
     date: {
         starting: '2/8',
         end: '3/8',
