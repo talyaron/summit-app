@@ -79,13 +79,6 @@ const HandleCourses = () => {
                         {course.name}
                         <br/>
                         {course.instructors}
-<<<<<<< HEAD
-                        <br/>
-                        {course.date.starting}-{course.date.end}
-                        <br />
-                        {course.date.repeat[0].hoursStart}-{course.date.repeat[0].hoursEnd}
-=======
->>>>>>> dev
                         <br/>
                         {Date(course.dates.start.seconds)}
                         <br/>
