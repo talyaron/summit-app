@@ -8,7 +8,7 @@ const Course = {
             {days:1, hoursStart:'12:40', hoursEnd:'15:00'} //the hours should be in date format
         ]
     },
-    students:[{'user object'}],
+    students:[{'user object':j}],
     active:'boolean',
     center:'sport/theater'
 }
