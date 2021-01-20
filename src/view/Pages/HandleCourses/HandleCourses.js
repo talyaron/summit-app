@@ -87,6 +87,8 @@ const HandleCourses = () => {
 =======
 >>>>>>> dev
                         <br/>
+                        {Date(course.dates.start.seconds)}
+                        <br/>
                         <img class='image' src={course.image} alt={"picture of" + course.name}/>
                     </div>
                 )
