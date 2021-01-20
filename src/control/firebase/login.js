@@ -1,6 +1,8 @@
 import { fb } from './firebase';
 import 'firebase/auth';
 
+import {saveUserToDB} from './set';
+
 const provider = new fb.auth.GoogleAuthProvider();
 
 export function onAuth() {
@@ -24,8 +26,11 @@ export function loginGoogle() {
         .then((result) => {
 
             const user = result.user;
+            
             console.log(user)
 
+            //store info on the DATABASE
+            saveUserToDB(user)
             //redirect to main
 
         }).catch((e) => {
