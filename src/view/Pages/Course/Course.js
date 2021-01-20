@@ -32,9 +32,4 @@ export const Course = () => {
         )
     }
 
-
-
-    function studentList(){
-
-    }
 }
