@@ -1,37 +1,40 @@
 import React from 'react'
 
+//importing components
+import InstructorCourse from '../../Components/InstructorCourse/InstructorCourse'
+import StudentCourse from '../../Components/StudentCourse/StudentCourse'
+
 
 export const Course = () => {
-    const course = {
-        name: 'tennis',
-        instructors: ['Avi'],
-        date:'Wednesday, 2:00pm-3:00pm',
-        // date:{
-        //     starting:'date',
-        //     end:'date',
-        //     repeat:[
-        //         {days:1, hoursStart:'12:40', hoursEnd:'15:00'} //the hours should be in date format
-        //     ]
-        // },
-        students: [{
-            name: 'Nil',
-            surname: 'Armstrong',
-            email: 'nil@moon.com',
-            phone: 'string',
-            userId: 'string',
-            courses: [],
-            role: 'student'
-        }
-        ],
-        active: true,
-        center: 'sport',
-        image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC_HxGflb-53zVTxUlG_TbBi6aPpPVoarXzQ&usqp=CAU',
     
+    function checkUser(){
+        //checks to see if the user is a student or instructor
+        //if student
+        //call studentCourse
+        //if instructor
+        //call instructorCourse
+        //call studentList
+        let student=true;
+        return student;
     }
-    return (
-        <div className="course">
-           <img src=${course.image}/>
-    <p><button className="chat">chat</button> </p>
-        </div>
-    )
+    if(student){
+        return(
+            <div className="studentCoursePage">
+                <StudentCourse></StudentCourse>
+            </div>
+        )
+    }
+    else{
+        return(
+            <div className="instructorCoursePage">
+                <InstructorCourse></InstructorCourse>
+            </div>
+        )
+    }
+
+
+
+    function studentList(){
+
+    }
 }
