@@ -12,60 +12,7 @@ courseList.get().then((querySnapshot) => {
     })
     console.log(coursesDB)
  })
-
-
-
-/*const coursesDB = [{
-    name: 'Basketball',
-    instructors: [],
-    date: {
-        starting: '2/7',
-        end: '3/7',
-        repeat: [
-            { days: 1, hoursStart: '12:40', hoursEnd: '15:00' } //the hours should be in date format
-        ],
-    },
-    image: 'https://www.spalding.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-masterCatalog_SPALDING/default/dwd21974bc/images/hi-res/74876E_FRONT.jpg?sw=555&sh=689&sm=cut&sfrm=jpg',
-
-    students: [{
-        name: 'Nil',
-        surname: 'Armstrong',
-        email: 'nil@moon.com',
-        phone: 'string',
-        userId: 'string',
-        courses: [],
-        role: 'student'
-    }
-    ],
-    active: true,
-    center: 'sport'
-},
-{
-    name: 'Tennis',
-    instructors: [],
-    date: {
-        starting: '2/8',
-        end: '3/8',
-        repeat: [
-            { days: 1, hoursStart: '12:40', hoursEnd: '15:00' } //the hours should be in date format
-        ],
-    },
-    image: 'https://www.pandapets.co.il/images/shop/product/tennis%20ball.jpg',
-    students: [{
-        name: 'Nil',
-        surname: 'Armstrong',
-        email: 'nil@moon.com',
-        phone: 'string',
-        userId: 'string',
-        courses: [],
-        role: 'student'
-    }
-    ],
-    active: true,
-    center: 'sport'
-}]*/
-
-
+ 
 
 const HandleCourses = () => {
 
