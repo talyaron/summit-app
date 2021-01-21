@@ -10,7 +10,7 @@ import {
 import Login from './view/Pages/Login/Login';
 import Main from './view/Pages/Main/Main'
 import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
-import Profile from './view/Pages/Profile';
+import Profile from './view/Pages/Profile/Profile';
 //functions
 import {onAuth} from './control/firebase/login'
 
@@ -55,7 +55,7 @@ export default function App() {
           <Route path="/adminCourses">
             <HandleCourses/>
           </Route>
-          <Route path="/">
+          <Route exact={true} path="/">
             <Main />
           </Route>
           <Route path="/profile">

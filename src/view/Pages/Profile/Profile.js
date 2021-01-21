@@ -3,10 +3,15 @@ import './Profile.css';
 import { DB } from '../../../control/firebase/firebase.js';
 
 const profileList = DB.collection("profiles")
-const profilesDB = []
+const profilesDB = [];
 
-return(
-    <div>
-        <h1> Profile </h1>
-    </div>
-)
+function Profile() {
+
+    return (
+        <div>
+            <h1> Profile blala </h1>
+        </div>
+    )
+}
+
+export default Profile;
