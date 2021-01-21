@@ -8,8 +8,22 @@ const profilesDB = [];
 function Profile() {
 
     return (
-        <div>
-            <h1> Profile blala </h1>
+        <div className='profile'>
+            <h1> Profile </h1>
+        {profilesDB.map((profile, index) => {
+            return (
+<div>
+        <div className='Name' key={index}>
+            Name: {profile.name}
+         </div>
+
+         <div className='Photo' key={index}>
+             <img className='image' src={profile.image} alt={"photo of" + profile.name }/>
+         </div>
+                </div>
+            )
+        })}
+
         </div>
     )
 }
