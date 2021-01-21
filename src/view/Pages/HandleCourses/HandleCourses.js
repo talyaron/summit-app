@@ -5,7 +5,7 @@ import { DB } from '../../../control/firebase/firebase.js';
 const courseList = DB.collection("courses")
 const coursesDB = []
 
-courseList.get().then((querySnapshot) => {
+courseList.onSnapshot((querySnapshot) => {
     
     querySnapshot.forEach((doc) => {
         coursesDB.push({...doc.data() })
@@ -49,7 +49,15 @@ const HandleCourses = () => {
 
             <div id="AddCourseDiv">
                 <form>
-                    <input type="text" placeholder="text here"/>
+                    Course Name: <input type="text" placeholder="text here"/>
+                    <br/>
+                    instructor's Name: <input type="text" placeholder="text here"/>
+                    <br/>
+                    Date: <input type="date"/>
+                    <br/>
+                    Picture url: <input type="text" placeholder="text here"/>
+                    <br/>
+                    <input type="submit"/>
 
                 </form>
             </div>
