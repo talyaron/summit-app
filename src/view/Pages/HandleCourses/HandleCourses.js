@@ -18,7 +18,7 @@ const HandleCourses = () => {
 
 
     return (
-        <div>
+        <div className='div'>
             <h1 style={{textAlign: 'center'}}>Courses</h1>
             <div>
                 <select name="cars" id="cars" multiple>
@@ -35,17 +35,19 @@ const HandleCourses = () => {
                             {Date(course.dates.start.seconds)}
                         </div>
                         <div className="box2">
-                            {course.instructors}
+                            Instructor: {course.instructors}
                         </div>
                         <div className="box2">
-                            {course.name}
+                            Course: {course.name}
                         </div>
                         <div className="box2">
                             <img className='image' src={course.image} alt={"picture of" + course.name}/>
                         </div>
+                        
                     </div>
                 )
             })}
+            <button className='button'>+</button>
         </div>
     )
 }
