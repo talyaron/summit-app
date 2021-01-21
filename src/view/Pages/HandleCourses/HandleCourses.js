@@ -13,7 +13,9 @@ courseList.get().then((querySnapshot) => {
     console.log(coursesDB)
  })
 
+
 const HandleCourses = () => {
+
 
     return (
         <div className='div'>
