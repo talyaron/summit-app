@@ -14,7 +14,12 @@ courseList.get().then((querySnapshot) => {
  })
 
 
+
 const HandleCourses = () => {
+
+    function AddCourse(){
+        alert("hi")
+    }
 
 
     return (
@@ -38,9 +43,11 @@ const HandleCourses = () => {
                     </div>
                 )
             })}
-            <button className='button'>+</button>
+            <button className='button' onClick={AddCourse}>+</button>
         </div>
     )
+   
+
 }
 
 export default HandleCourses
