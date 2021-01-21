@@ -9,7 +9,8 @@ import {
 //components
 import Login from './view/Pages/Login/Login';
 import Main from './view/Pages/Main/Main'
-import HandleCourses from './view/Pages/HandleCourses/HandleCourses'
+import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
+import Profile from './view/Pages/Profile';
 //functions
 import {onAuth} from './control/firebase/login'
 
@@ -39,6 +40,9 @@ export default function App() {
           <li>
             <Link to='/adminCourses'>Courses</Link>
           </li>
+          <li>
+            <Link to='/Profile'>Profile</Link>
+          </li>
           </ul>
         </nav>
 
@@ -53,6 +57,9 @@ export default function App() {
           </Route>
           <Route path="/">
             <Main />
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
         </Switch>
       </div>
