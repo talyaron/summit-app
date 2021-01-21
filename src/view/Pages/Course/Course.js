@@ -1,11 +1,16 @@
 import React from 'react'
+import { useParams } from "react-router-dom";
 
 //importing components
-import InstructorCourse from '../../Components/InstructorCourse/InstructorCourse'
+// import InstructorCourse from '../../Components/InstructorCourse/InstructorCourse'
 import StudentCourse from '../../Components/StudentCourse/StudentCourse'
 
 
 export const Course = () => {
+
+    let {courseId} = useParams();
+
+    console.log(courseId)
     
     function checkUser(){
         //checks to see if the user is a student or instructor
@@ -17,19 +22,22 @@ export const Course = () => {
         let student=true;
         return student;
     }
-    if(student){
+    if(true){
         return(
             <div className="studentCoursePage">
-                <StudentCourse></StudentCourse>
+                STUDENT
+                <StudentCourse courseId={courseId}></StudentCourse>
             </div>
         )
     }
     else{
         return(
             <div className="instructorCoursePage">
-                <InstructorCourse></InstructorCourse>
+                {/* <InstructorCourse courseId={courseId}></InstructorCourse> */}
             </div>
         )
     }
 
 }
+
+export default Course;

@@ -1,7 +1,7 @@
 import React from 'react'
 import{DB} from '../../../control/firebase/firebase'
 import {useState} from 'react';
-import StudentList from '../StudentList/StudentList'
+// import StudentList from '../StudentList/StudentList'
 
 export const InstructorCourse = () => {
     //using an already made courseId for now
@@ -54,14 +54,16 @@ export const InstructorCourse = () => {
                     <button className="edit" onClick={editDate}>edit</button>
                 </div>
                 <div id="instructors">
-                    <div>{instructors,map((instructor, index=>{
+                    {/* <div>{instructors.map((instructor, index=>{
                     return(<p key={index}>{instructor}</p>)
                     }))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
-            <StudentList></StudentList>
+            {/* <StudentList></StudentList> */}
         </div>
     )
 
 }
+
+export default InstructorCourse;
