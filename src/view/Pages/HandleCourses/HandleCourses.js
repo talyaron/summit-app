@@ -35,17 +35,20 @@ const HandleCourses = () => {
                             {Date(course.dates.start.seconds)}
                         </div>
                         <div className="box2">
-                            {course.instructors}
+                            Instructor: {course.instructors}
                         </div>
                         <div className="box2">
-                            {course.name}
+                            Course: {course.name}
                         </div>
                         <div className="box2">
                             <img className='image' src={course.image} alt={"picture of" + course.name}/>
                         </div>
+                        
                     </div>
                 )
             })}
+            <br/>
+            <button className='button'>+</button>
         </div>
     )
 }
