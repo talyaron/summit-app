@@ -18,7 +18,8 @@ courseList.get().then((querySnapshot) => {
 const HandleCourses = () => {
 
     function AddCourse(){
-        alert("hi")
+        let addingForm = document.getElementById("AddCourseDiv")
+        addingForm.style.visibility = "visible"
     }
 
 
@@ -44,6 +45,14 @@ const HandleCourses = () => {
                 )
             })}
             <button className='button' onClick={AddCourse}>+</button>
+
+
+            <div id="AddCourseDiv">
+                <form>
+                    <input type="text" placeholder="text here"/>
+
+                </form>
+            </div>
         </div>
     )
    
