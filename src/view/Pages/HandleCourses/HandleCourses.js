@@ -18,7 +18,7 @@ const HandleCourses = () => {
 
 
     return (
-        <div>
+        <div className='div'>
             <h1 style={{textAlign: 'center'}}>Courses</h1>
             <div>
                 <select name="cars" id="cars" multiple>
@@ -47,7 +47,6 @@ const HandleCourses = () => {
                     </div>
                 )
             })}
-            <br/>
             <button className='button'>+</button>
         </div>
     )
