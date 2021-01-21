@@ -12,7 +12,7 @@ function Profile() {
             <h1> Profile </h1>
         {profilesDB.map((profile, index) => {
             return (
-
+<div>
         <div className='Name' key={index}>
             Name: {profile.name}
          </div>
@@ -20,7 +20,7 @@ function Profile() {
          <div className='Photo' key={index}>
              <img className='image' src={profile.image} alt={"photo of" + profile.name }/>
          </div>
-         
+                </div>
             )
         })}
 
