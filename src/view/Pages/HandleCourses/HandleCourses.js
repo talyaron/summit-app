@@ -62,10 +62,9 @@ const HandleCourses = () => {
     return (
         <div className='div'>
             <h1 style={{ textAlign: 'center' }}>Courses</h1>
-            <div id="sortOrder">
-                <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
-                <span>jdjd</span>
-            </div>
+
+            <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
+            
             {coursesDB.map((course, index) => {
                 return (
                     <div className='courseBox' key={index}>
