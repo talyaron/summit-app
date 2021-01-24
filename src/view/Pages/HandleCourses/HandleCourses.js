@@ -33,9 +33,10 @@ const HandleCourses = () => {
         let teacherName = e.target.children[2].value
         let date = e.target.children[4].value
         let image = e.target.children[6].value
+        let active = e.target.children[8].checked
         console.log(courseName, teacherName, date, image)
-        DB.collection('courses').add({name: courseName, instructors: teacherName, image: image, dates: {start: date}})
-
+        DB.collection('courses').add({name: courseName, instructors: teacherName, image: image, dates: {start: date}, active: active})
+        
         let addingForm = document.getElementById("AddCourseDiv")
         addingForm.style.visibility = "hidden"
     }
@@ -70,11 +71,11 @@ const HandleCourses = () => {
                     <br />
                     Instructor's Name: <input type="text" placeholder="text here" />
                     <br />
-                    Date: <input type="date" />
+                    Date: <input type="datetime" />
                     <br />
                     Picture URL: <input type="text" placeholder="text here" />
                     <br />
-                    Active:<input type="checkbox"/>
+                    Active:<input id="active" type="checkbox"/>
                     <br/>
                     <input type="submit" />
 
