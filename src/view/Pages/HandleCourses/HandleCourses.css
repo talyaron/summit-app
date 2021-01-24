@@ -43,3 +43,7 @@
    visibility: hidden;
    background-color: blue;
 }
+
+.imageUp{
+   transform: rotate(180deg);
+}
