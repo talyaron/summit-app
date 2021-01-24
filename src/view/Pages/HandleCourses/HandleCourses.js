@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './HandleCourses.css';
 import { DB } from '../../../control/firebase/firebase.js';
 
 const courseList = DB.collection("courses")
-const coursesDB = []
-
-courseList.onSnapshot((querySnapshot) => {
-
-    querySnapshot.forEach((doc) => {
-        coursesDB.push({ ...doc.data() })
-    })
-    console.log(coursesDB)
-})
-
 
 
 const HandleCourses = () => {
+    const [coursesDB, setCourses] = useState([])
+    useEffect(()=>{
+        courseList.onSnapshot(querySnapshot=>{
+          let coursesTempArray = [];
+          querySnapshot.forEach(course=>{
+            console.log(course.data())
+            coursesTempArray.push(course.data());
+            console.log(coursesTempArray)
+          })
+          setCourses(coursesTempArray)
+        })
+          
+          },[])
+
 
     function AddCourse() {
         let addingForm = document.getElementById("AddCourseDiv")
@@ -24,12 +28,16 @@ const HandleCourses = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(e)
-        let input1 = e.target.children[0].value
-        let input2 = e.target.children[1].value
-        let input3 = e.target.children[2].value
-        let input4 = e.target.children[3].value
-        DB.collection('courses').add({input1, input2, input3, input4})
+        console.log("hello"+e)
+        let courseName = e.target.children[0].value
+        let teacherName = e.target.children[2].value
+        let date = e.target.children[4].value
+        let image = e.target.children[6].value
+        console.log(courseName, teacherName, date, image)
+        DB.collection('courses').add({name: courseName, instructors: teacherName, image: image, dates: {start: date}})
+
+        let addingForm = document.getElementById("AddCourseDiv")
+        addingForm.style.visibility = "hidden"
     }
 
     return (
@@ -66,6 +74,8 @@ const HandleCourses = () => {
                     <br />
                     Picture URL: <input type="text" placeholder="text here" />
                     <br />
+                    Active:<input type="checkbox"/>
+                    <br/>
                     <input type="submit" />
 
                 </form>
