@@ -7,28 +7,29 @@ const courseList = DB.collection("courses")
 
 const HandleCourses = () => {
     const [coursesDB, setCourses] = useState([])
-    useEffect(()=>{
-        courseList.onSnapshot(querySnapshot=>{
-          let coursesTempArray = [];
-          querySnapshot.forEach(course=>{
-            console.log(course.data())
-            coursesTempArray.push(course.data());
-            console.log(coursesTempArray)
-          })
-          setCourses(coursesTempArray)
+    useEffect(() => {
+        courseList.onSnapshot(querySnapshot => {
+            let coursesTempArray = [];
+            querySnapshot.forEach(course => {
+                console.log(course.data())
+                coursesTempArray.push(course.data());
+                console.log(coursesTempArray)
+            })
+            setCourses(coursesTempArray)
         })
-          
-          },[])
 
+    }, [])
+
+    let addingForm = document.getElementById("AddCourseDiv")
 
     function AddCourse() {
-        let addingForm = document.getElementById("AddCourseDiv")
         addingForm.style.visibility = "visible"
     }
+    
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("hello"+e)
+        console.log("hello" + e)
         let courseName = e.target.children[0].value
         let teacherName = e.target.children[2].value
         let date = e.target.children[4].value
@@ -36,9 +37,11 @@ const HandleCourses = () => {
         let active = e.target.children[8].checked
         console.log(courseName, teacherName, date, image)
         DB.collection('courses').add({name: courseName, instructors: teacherName, image: image, dates: {start: date}, active: active})
-        
-        let addingForm = document.getElementById("AddCourseDiv")
         addingForm.style.visibility = "hidden"
+    }
+
+    function handleClose(e) {
+        addingForm.style.visibility = 'hidden'
     }
 
     return (
@@ -76,10 +79,10 @@ const HandleCourses = () => {
                     Picture URL: <input type="text" placeholder="text here" />
                     <br />
                     Active:<input id="active" type="checkbox"/>
-                    <br/>
+                    <br />
                     <input type="submit" />
-
                 </form>
+                <button className='close' onClick={handleClose}>Close</button>
             </div>
         </div>
     )

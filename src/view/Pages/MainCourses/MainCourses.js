@@ -14,4 +14,3 @@ let MainCourses = function (){
     }
 
     export default MainCourses;
-
