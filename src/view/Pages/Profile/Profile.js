@@ -13,7 +13,7 @@ function Profile() {
         {profilesDB.map((profile, index) => {
             return (
 <div>
-        <div className='Name' key={index}>
+        (<div className='Name' key={index}>
             Name: {profile.name}
          </div>
 
