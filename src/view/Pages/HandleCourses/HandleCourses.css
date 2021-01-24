@@ -29,6 +29,11 @@
    bottom:20px;
 }
 
-.div {
-   
+#AddCourseDiv{
+   border: 2px solid black;
+   position: absolute;
+   top: 40%;
+   left: 40%;
+   visibility: hidden;
+   background-color: blue;
 }
