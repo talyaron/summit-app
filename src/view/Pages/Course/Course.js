@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from "react-router-dom";
 
 //importing components
-// import InstructorCourse from '../../Components/InstructorCourse/InstructorCourse'
+ import InstructorCourse from '../../Components/InstructorCourse/InstructorCourse'
 import StudentCourse from '../../Components/StudentCourse/StudentCourse'
 
 
@@ -33,7 +33,7 @@ export const Course = () => {
     else{
         return(
             <div className="instructorCoursePage">
-                {/* <InstructorCourse courseId={courseId}></InstructorCourse> */}
+                 <InstructorCourse courseId={courseId}></InstructorCourse> 
             </div>
         )
     }

@@ -1,31 +1,42 @@
 import React from 'react'
 import{DB} from '../../../control/firebase/firebase'
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 // import StudentList from '../StudentList/StudentList'
+//import instructor course css
 
-export const InstructorCourse = () => {
+export const InstructorCourse = props => {
     //using an already made courseId for now
-    let courseId='Q5U4t5de4H1YoWLYSWlu'
-    function findCourse(){
-        /*need some function on the course list pages that onclick
-         returns the ID of the specific course document to access the specific
-         course info
-         */
-    }
+    
+    const {courseId}=props;
+    console.log(courseId);
+   
 
     //set useStates 
     const [courseName, setCourseName]=useState('');
     const [imageSource,setImageSource]=useState('');
     const [instructors, setInstructors]=useState([]);
-    const [dates, setDates]=useState({});
+    const [dates, setDates]=useState('');
 
     //collect DB data of course for useState
-    DB.collection('courses').doc(`${courseId}`).onSnapshot(courseDB=>{
-        setCourseName(courseDB.data().name);
-        setImageSource(courseDB.data().image);
-        setInstructors(courseDB.data().instructors);
-        setDates(courseDB.data().dates);
-    })
+    try{
+        useEffect(()=>{
+            const unsubscribe=DB.collection('courses').doc(`${courseId}`).onSnapshot(courseDB=>{
+                console.log(courseDB.data())
+                setCourseName(courseDB.data().name);
+                setImageSource(courseDB.data().image);
+                setInstructors(courseDB.data().instructors);
+                
+                if(typeof courseDB.data().dates.start.seconds==='number'){
+                    setDates(courseDB.data().dates.start.seconds*1000);
+                }
+            })
+            return ()=>{
+                unsubscribe()
+            }
+        },[])
+    
+    
+        
 
 
     //How should we get the input?
@@ -63,7 +74,9 @@ export const InstructorCourse = () => {
             {/* <StudentList></StudentList> */}
         </div>
     )
-
+     }catch(e){
+        console.log(e)
+    }
 }
 
 export default InstructorCourse;
