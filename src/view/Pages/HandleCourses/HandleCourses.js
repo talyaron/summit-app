@@ -13,7 +13,8 @@ const HandleCourses = () => {
         courseList.onSnapshot(querySnapshot => {
             let coursesTempArray = [];
             querySnapshot.forEach(course => {
-                console.log(course.data())
+                let courseObj = course.data();
+                courseObj.id = course.id;
                 coursesTempArray.push(course.data());
                 console.log(coursesTempArray)
             })
@@ -44,13 +45,25 @@ const HandleCourses = () => {
     }
 
     function changeSortDirection(e) {
-        console.log(e.target.className)
-        if (e.target.className == "imageUp") {
-            e.target.className = "imagedown"
+
+      
+        let coursesT = [...coursesDB];
+       
+        
+
+        if (e.target.className === "imageUp") {
+            e.target.className = "imagedown";
+            coursesT.sort((a, b) => a.dates.start.seconds - b.dates.start.seconds);
+
         }
         else {
-            e.target.className = "imageUp"
+            e.target.className = "imageUp";
+            coursesT.sort((a, b) => b.dates.start.seconds - a.dates.start.seconds);
         }
+
+        
+        setCourses(coursesT)
+
 
     }
 
@@ -64,10 +77,10 @@ const HandleCourses = () => {
             <h1 style={{ textAlign: 'center' }}>Courses</h1>
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
-            
-            {coursesDB.map((course, index) => {
+
+            {coursesDB.map(course => {
                 return (
-                    <div className='courseBox' key={index}>
+                    <div className='courseBox' key={course.id}>
                         <div className="box2">
                             {Date(course.dates.start.seconds)}
                         </div>
