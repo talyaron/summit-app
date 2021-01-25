@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DB } from '../../../control/firebase/firebase'
+import './StudentCourse.css'
 
 export const StudentCourse = props => {
 
