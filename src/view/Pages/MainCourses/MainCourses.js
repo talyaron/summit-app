@@ -3,6 +3,7 @@ import './MainCourses.css';
 import { DB } from '../../../control/firebase/firebase.js';
 import { useParams } from "react-router-dom";
 
+
 import MainCourse from '../../Components/MainCourse/MainCourse'
 
 
@@ -22,10 +23,11 @@ export const MainCourseList = () => {
   
     return (
         <div>
-            <div className='mainCourses'>
-                <h1>Main Courses</h1>
+            <div className='mainCourses' id='mainCourses'>
+                <h1 style={{ textAlign: 'center' }}>Main Courses</h1>
             </div>
-            <div className="mainCoursePage"> all courses
+            <div style={{ textAlign: 'center' }} className="mainCoursePage">
+            
             {courseList.map((course, index) => {
                 return (<MainCourse key={index} course={course}></MainCourse>)
             })}
