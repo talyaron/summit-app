@@ -15,12 +15,8 @@ import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
 import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
-<<<<<<< Updated upstream
-import BottomNav from './view/Components/BottomNav/BottomNav';
-import SideNav from './view/Components/SideNav/SideNav'
-=======
-import BottomNav from './view/Pages/BottomNav/BottomNav'
->>>>>>> Stashed changes
+import BottomNav from './view/Pages/BottomNav/BottomNav';
+
 
 //functions
 import {onAuth} from './control/firebase/login'
@@ -60,19 +56,12 @@ export default function App() {
           <li>
             <Link to='/course/Q5U4t5de4H1YoWLYSWlu'>a course</Link>
           </li>
-<<<<<<< Updated upstream
           <li>
             <Link to='/BottomNav'>Nav</Link>
           </li>
           <li>
             <Link to='/SideNav'>SideNav</Link>
           </li>
-=======
-          
-        <button >
-  Nav</button>
-
->>>>>>> Stashed changes
           </ul>
 
         </nav>
@@ -101,9 +90,7 @@ export default function App() {
           <Route path="/BottomNav"> 
             <BottomNav/>
           </Route>
-          <Route path="/SideNav"> 
-            <SideNav/>
-          </Route>
+          
         </Switch>
       </div>
     </Router>
