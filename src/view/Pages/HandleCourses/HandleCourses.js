@@ -45,7 +45,6 @@ const HandleCourses = () => {
     }
 
     function changeSortDirection(e) {
-
       
         let coursesT = [...coursesDB];
        
