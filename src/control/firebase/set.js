@@ -10,7 +10,7 @@ export const saveUserToDB = (user) => {
         DB.collection('users').doc(user.uid)
         .set(userObj, {merge:true})
         .then(()=>{
-            console.log('user saved to db')
+            sessionStorage.setItem('user',JSON.stringify(userObj))
         })
         .catch(e=>{
             console.error(e)

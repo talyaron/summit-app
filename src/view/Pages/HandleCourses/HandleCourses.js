@@ -9,6 +9,7 @@ const sortImg = "https://icon-library.com/images/icon-sort/icon-sort-18.jpg"
 const HandleCourses = () => {
 
     const [coursesDB, setCourses] = useState([])
+<<<<<<< HEAD
     useEffect(()=>{
         courseList.onSnapshot(querySnapshot=>{
           let coursesTempArray = [];
@@ -18,6 +19,18 @@ const HandleCourses = () => {
             console.log(coursesTempArray)
           })
           setCourses(coursesTempArray)
+=======
+    useEffect(() => {
+        courseList.onSnapshot(querySnapshot => {
+            let coursesTempArray = [];
+            querySnapshot.forEach(course => {
+                let courseObj = course.data();
+                courseObj.id = course.id;
+                coursesTempArray.push(course.data());
+                console.log(coursesTempArray)
+            })
+            setCourses(coursesTempArray)
+>>>>>>> dev
         })
           
           },[])
@@ -43,6 +56,7 @@ const HandleCourses = () => {
         addingForm.style.visibility = "hidden"
     }
 
+<<<<<<< HEAD
     function changeSortDirection(e){
         console.log(e.target.className)
         if (e.target.className=="imageUp"){
@@ -52,6 +66,29 @@ const HandleCourses = () => {
             e.target.className="imageUp"
         }
         
+=======
+    function changeSortDirection(e) {
+
+      
+        let coursesT = [...coursesDB];
+       
+        
+
+        if (e.target.className === "imageUp") {
+            e.target.className = "imagedown";
+            coursesT.sort((a, b) => a.dates.start.seconds - b.dates.start.seconds);
+
+        }
+        else {
+            e.target.className = "imageUp";
+            coursesT.sort((a, b) => b.dates.start.seconds - a.dates.start.seconds);
+        }
+
+        
+        setCourses(coursesT)
+
+
+>>>>>>> dev
     }
 
 function handleClose(e){
@@ -65,6 +102,7 @@ function handleClose(e){
 <<<<<<< Updated upstream
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
+<<<<<<< HEAD
             
 =======
             <div id="sortOrder">
@@ -73,8 +111,12 @@ function handleClose(e){
             </div>
 >>>>>>> Stashed changes
             {coursesDB.map((course, index) => {
+=======
+
+            {coursesDB.map(course => {
+>>>>>>> dev
                 return (
-                    <div className='courseBox' key={index}>
+                    <div className='courseBox' key={course.id}>
                         <div className="box2">
                             {Date(course.dates.start.seconds)}
                         </div>
