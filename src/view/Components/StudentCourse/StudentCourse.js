@@ -7,9 +7,9 @@ export const StudentCourse = props => {
 
 
     //using an already made courseId for now
-    const { courseId } = props;
+    const { courseId, user } = props;
 
-    console.log(courseId)
+    console.log(user)
 
 
     //set useStates 
@@ -65,10 +65,11 @@ export const StudentCourse = props => {
                 <p id="instructorAndDate">
                     {/*need to check how set these states */}
                     <span id="date">{dates}</span>
-                    {/* <span id="instructors">{instructors.map((instructor, index=>{
-                    return(<p key={index}>{instructor}</p>)
-                }))}
-                </span> */}
+                    <span id="instructors">
+                        {instructors.map((instructor, index)=> {
+                            return (<p key={index}>{instructor}</p>)
+                        })}
+                    </span>
                 </p>
                 <button className="joinOrLeave" onClick={joinOrLeave}>{joinOrLeaveClass}</button>
             </div>
