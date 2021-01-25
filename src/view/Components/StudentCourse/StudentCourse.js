@@ -5,8 +5,6 @@ import './StudentCourse.css'
 
 export const StudentCourse = props => {
 
-
-    //using an already made courseId for now
     const { courseId, user } = props;
 
     console.log(user)
@@ -39,11 +37,20 @@ export const StudentCourse = props => {
         }, [])
 
 
+        inClass();
         function inClass() {
             //checks if the user is in the class already
             //need user info for this
             //if not in class, setJoinOrLeaveClass to 'Join'
             //else set it to 'Leave'
+            try{
+            DB.collection('users').doc(`${user.uid}`).onSnapshot(userDB=>{
+                console.log(userDB.data())
+            })
+        }
+        catch(e){
+            console.log(e);
+        }
         }
 
         function goToChat() {
