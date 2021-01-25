@@ -31,26 +31,36 @@ export const StudentCourse = props => {
                 }
             })
 
+            inClass();
+
             return () => {
                 unsubscribe()
             }
         }, [])
 
 
-        inClass();
+
         function inClass() {
             //checks if the user is in the class already
             //need user info for this
             //if not in class, setJoinOrLeaveClass to 'Join'
             //else set it to 'Leave'
-            try{
-            DB.collection('users').doc(`${user.uid}`).onSnapshot(userDB=>{
-                console.log(userDB.data())
-            })
-        }
-        catch(e){
-            console.log(e);
-        }
+            try {
+                return DB.collection('users').doc(user.uid).collection('courses').doc(courseId).onSnapshot(userDB => {
+                    if(userDB.exists){
+                        console.log(userDB.data())
+                        setJoinOrLeaveClass('leave')
+                    } else {
+                        console.log('student is not registered')
+                        setJoinOrLeaveClass('join')
+                    }
+                    
+                })
+            }
+            catch (e) {
+                console.log(e);
+                return ()=>{}
+            }
         }
 
         function goToChat() {
@@ -73,7 +83,7 @@ export const StudentCourse = props => {
                     {/*need to check how set these states */}
                     <span id="date">{dates}</span>
                     <span id="instructors">
-                        {instructors.map((instructor, index)=> {
+                        {instructors.map((instructor, index) => {
                             return (<p key={index}>{instructor}</p>)
                         })}
                     </span>
