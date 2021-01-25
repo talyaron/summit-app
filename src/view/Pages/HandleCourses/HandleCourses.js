@@ -78,10 +78,6 @@ function handleClose(e){
 
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
-            <div id="sortOrder">
-                <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt=""/>
-                <span>jdjd</span>
-            </div>
            
 
 
