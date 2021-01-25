@@ -1,33 +1,31 @@
 .joinOrLeave{
-<<<<<<< HEAD
-    background-color: pink;
-}
-
-.goToChat{
-    background-color: pink;
-=======
     background-color:pink;
     border-color:pink;
-    padding-left:30px;
-    padding-right:30px;
-    padding-top:15px;
-    padding-bottom:15px;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:13px;
+    padding-bottom:13px;
+    font-weight: 900;
+    color: white;
 
 }
 img{
-    width:200px;
+    width:325px;
     height:200px;
 }
 
 .studentCourse{
     text-align:center;
+    
 }
 
 #chat{
     display:inline-block;
     margin:15px;
+    background-color: grey;
+    
 }
 #courseName{
     display:inline-block;
->>>>>>> dev
+    
 }
