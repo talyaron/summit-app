@@ -13,7 +13,7 @@ import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
 import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
-import BottomNav from './view/Pages/BottomNav/BottomNav'
+import BottomNav from './view/Components/BottomNav/BottomNav'
 
 //functions
 import {onAuth} from './control/firebase/login'
@@ -54,7 +54,7 @@ export default function App() {
             <Link to='/course/Q5U4t5de4H1YoWLYSWlu'>a course</Link>
           </li>
           <li>
-            <Link to='/BottomNav'>Navigation</Link>
+            <Link to='/BottomNav'>Nav</Link>
           </li>
           </ul>
         </nav>
