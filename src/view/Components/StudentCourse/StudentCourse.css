@@ -1,11 +1,4 @@
 .joinOrLeave{
-<<<<<<< HEAD
-    background-color: pink;
-}
-
-.goToChat{
-    background-color: pink;
-=======
     background-color:pink;
     border-color:pink;
     padding-left:30px;
@@ -29,5 +22,4 @@ img{
 }
 #courseName{
     display:inline-block;
->>>>>>> dev
 }

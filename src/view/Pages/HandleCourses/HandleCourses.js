@@ -9,17 +9,6 @@ const sortImg = "https://icon-library.com/images/icon-sort/icon-sort-18.jpg"
 const HandleCourses = () => {
 
     const [coursesDB, setCourses] = useState([])
-<<<<<<< HEAD
-    useEffect(()=>{
-        courseList.onSnapshot(querySnapshot=>{
-          let coursesTempArray = [];
-          querySnapshot.forEach(course=>{
-            console.log(course.data())
-            coursesTempArray.push(course.data());
-            console.log(coursesTempArray)
-          })
-          setCourses(coursesTempArray)
-=======
     useEffect(() => {
         courseList.onSnapshot(querySnapshot => {
             let coursesTempArray = [];
@@ -30,7 +19,6 @@ const HandleCourses = () => {
                 console.log(coursesTempArray)
             })
             setCourses(coursesTempArray)
->>>>>>> dev
         })
           
           },[])
@@ -56,17 +44,6 @@ const HandleCourses = () => {
         addingForm.style.visibility = "hidden"
     }
 
-<<<<<<< HEAD
-    function changeSortDirection(e){
-        console.log(e.target.className)
-        if (e.target.className=="imageUp"){
-            e.target.className="imagedown"
-        }
-        else{
-            e.target.className="imageUp"
-        }
-        
-=======
     function changeSortDirection(e) {
 
       
@@ -88,7 +65,6 @@ const HandleCourses = () => {
         setCourses(coursesT)
 
 
->>>>>>> dev
     }
 
 function handleClose(e){
@@ -99,22 +75,18 @@ function handleClose(e){
     return (
         <div className='div'>
             <h1 style={{ textAlign: 'center' }}>Courses</h1>
-<<<<<<< Updated upstream
+
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
-<<<<<<< HEAD
-            
-=======
             <div id="sortOrder">
                 <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt=""/>
                 <span>jdjd</span>
             </div>
->>>>>>> Stashed changes
-            {coursesDB.map((course, index) => {
-=======
+           
+
 
             {coursesDB.map(course => {
->>>>>>> dev
+
                 return (
                     <div className='courseBox' key={course.id}>
                         <div className="box2">
