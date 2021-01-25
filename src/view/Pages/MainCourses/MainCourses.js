@@ -1,28 +1,52 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './MainCourses.css';
 import { DB } from '../../../control/firebase/firebase.js';
 import { useParams } from "react-router-dom";
 
 import MainCourse from '../../Components/MainCourse/MainCourse'
 
-const mainCourseList = DB.collection("mainCourses")
-const mainCoursesDB = [];
+
+
 
 export const MainCourseList = () => {
-let {mainId} = useParams();
-console.log(mainId)
+   
+    const [courseList, setCourseList] = useState([]);
 
-let MainCourses = function (){
-    return(
+    useEffect(() => {
+        let unsubscribe = listenToAllCourses(setCourseList);
+        return () => {
+            unsubscribe()
+        }
+    }, [])
+
+  
+    return (
         <div>
-        <div className='mainCourses'>
-            <h1>Main Courses</h1>
+            <div className='mainCourses'>
+                <h1>Main Courses</h1>
+            </div>
+            <div className="mainCoursePage"> all courses
+            {courseList.map((course, index) => {
+                return (<MainCourse key={index} course={course}></MainCourse>)
+            })}
+
+            </div>
         </div>
-        <div className="mainCoursePage"> all courses
-        <MainCourse courseId={mainId}></MainCourse> </div>
-        </div>
-        
+
     )
-    }
+
 }
-    export default MainCourseList;
+export default MainCourseList;
+
+function listenToAllCourses(setCourserList) {
+   return  DB.collection("courses").onSnapshot(coursesDB=>{
+       const coursesTemp =[];
+        coursesDB.forEach(courseDB=>{
+            const courseObj = courseDB.data();
+            courseObj.courseId = courseDB.id;
+            coursesTemp.push(courseObj)
+        })
+        setCourserList(coursesTemp)
+    })
+}
+
