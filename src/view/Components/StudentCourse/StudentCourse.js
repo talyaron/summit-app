@@ -1,20 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { DB } from '../../../control/firebase/firebase'
+import './StudentCourse.css'
 
 export const StudentCourse = props => {
 
 
     //using an already made courseId for now
-    const { courseId } = props;
+    const { courseId, user } = props;
 
-    console.log(courseId)
-    function findCourse() {
-        /*need some function on the course list pages that onclick
-         returns the ID of the specific course document to access the specific
-         course info
-         */
-    }
+    console.log(user)
+
 
     //set useStates 
     const [courseName, setCourseName] = useState('');
@@ -61,19 +57,21 @@ export const StudentCourse = props => {
         }
 
         return (
-            <div id="studentCourse">
+            <div className="studentCourse">
                 <img src={imageSource}></img>
-                <p id="courseName">{courseName}</p>
+                <br></br>
                 <button id="chat" onClick={goToChat}>Chat</button>
+                <p id="courseName">{courseName}</p>
                 <p id="instructorAndDate">
                     {/*need to check how set these states */}
                     <span id="date">{dates}</span>
-                    {/* <span id="instructors">{instructors.map((instructor, index=>{
-                    return(<p key={index}>{instructor}</p>)
-                }))}
-                </span> */}
+                    <span id="instructors">
+                        {instructors.map((instructor, index)=> {
+                            return (<p key={index}>{instructor}</p>)
+                        })}
+                    </span>
                 </p>
-                <button id="joinOrLeave" onClick={joinOrLeave}>{joinOrLeaveClass}</button>
+                <button className="joinOrLeave" onClick={joinOrLeave}>{joinOrLeaveClass}</button>
             </div>
         )
 
