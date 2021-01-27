@@ -15,7 +15,7 @@ import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
 import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
-import BottomNav from './view/Pages/BottomNav/BottomNav';
+
 
 
 //functions
@@ -87,10 +87,7 @@ export default function App() {
           <Route path="/MainCourses">
             <MainCourses/>
           </Route>
-          <Route path="/BottomNav"> 
-            <BottomNav/>
-          </Route>
-          
+        
         </Switch>
       </div>
     </Router>

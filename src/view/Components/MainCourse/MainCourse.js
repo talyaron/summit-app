@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import './MainCourse.css';
 
 export const MainCourse = (props) => {
 
@@ -10,17 +10,17 @@ export const MainCourse = (props) => {
     return (
         <div id='mainPage'>
            
-                <img src={course.image} alt='course img' id='imageId' />
+                <img src={course.image} id='imageId' />
             
             <div id="courseName">
                 <p>{course.name}</p>
             </div>
-            {/* <div id="instructor">
-                <p> {instructors} </p>
+            <div id="instructor">
+                <p> {course.instructors} </p>
             </div>
             <div id="time">
-                <p>{times}</p>
-            </div> */}
+                            {Date(course.dates.start.seconds)}
+                        </div>
         </div>
     )
 }
