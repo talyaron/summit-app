@@ -1,5 +1,5 @@
 #mainCourses{
-    width: 300px;
+    width: 400px;
     border: 15px solid lightblue;
     text-align: center;
     margin: auto;
@@ -12,4 +12,5 @@ border: 15px solid lightblue;
     text-align: center;
     margin: auto;
     color: blue;
+    width: 400px;
 }
