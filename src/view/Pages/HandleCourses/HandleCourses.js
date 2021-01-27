@@ -52,12 +52,12 @@ const HandleCourses = () => {
 
         if (e.target.className === "imageUp") {
             e.target.className = "imagedown";
-            coursesT.sort((a, b) => a.dates.start.seconds - b.dates.start.seconds);
+            coursesT.sort((a, b) => a.dates.start - b.dates.start);
 
         }
         else {
             e.target.className = "imageUp";
-            coursesT.sort((a, b) => b.dates.start.seconds - a.dates.start.seconds);
+            coursesT.sort((a, b) => b.dates.start - a.dates.start);
         }
 
         
@@ -85,7 +85,7 @@ function handleClose(e){
                 return (
                     <div className='courseBox' key={course.id}>
                         <div className="box2">
-                            {Date(course.dates.start.seconds)}
+                            {'Date: ' + course.dates.start.split('T').join(',  Time: ')}
                         </div>
                         <div className="box2">
                             Instructor: {course.instructors}
@@ -108,7 +108,7 @@ function handleClose(e){
                     <br />
                     Instructor's Name: <input type="text" placeholder="text here" />
                     <br />
-                    Date: <input type="datetime" />
+                    Date: <input type="datetime-local" />
                     <br />
                     Picture URL: <input type="text" placeholder="text here" />
                     <br />
