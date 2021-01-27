@@ -1,0 +1,18 @@
+.iconDetails {
+    margin-left:0px;
+    vertical-align: middle;
+    height:30px;
+    width:30px; 
+    padding: 5px;
+   } 
+   
+.sidebar {
+    height:auto;
+    padding:1%;
+    border: 2px solid black
+   }
+
+.div {
+    width:100%;
+    border: 2px solid black
+}
