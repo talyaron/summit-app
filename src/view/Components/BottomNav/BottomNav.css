@@ -1,0 +1,16 @@
+.nav{
+    display: flex;
+    
+    
+    
+}
+.nav__button{
+    background-color: rgb(221, 221, 221);
+    padding: 10px;
+    flex:1;
+    text-align: center;
+    
+}
+.nav__button:hover{
+    background-color: rgb(180, 180, 180);
+}

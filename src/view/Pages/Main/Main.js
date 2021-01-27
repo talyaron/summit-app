@@ -4,6 +4,7 @@ import './Main.css';
 
 //components
 import Header from '../../Components/Header/Header';
+import BottomNav from '../../Components/BottomNav/BottomNav';
 
 //function 
 import { fb } from '../../../control/firebase/firebase'
@@ -48,10 +49,11 @@ export default function Main() {
   if (user) {
     return (
 
-      <div >
+      <div className='main' >
 
         <Header />
         <h1>Main</h1>
+        <BottomNav />
       </div>
     )
 
