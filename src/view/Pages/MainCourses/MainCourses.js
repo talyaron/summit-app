@@ -40,7 +40,7 @@ export const MainCourseList = () => {
 }
 export default MainCourseList;
 
-function listenToAllCourses(setCourserList) {
+function listenToAllCourses(setCoursesList) {
    return  DB.collection("courses").onSnapshot(coursesDB=>{
        const coursesTemp =[];
         coursesDB.forEach(courseDB=>{
@@ -48,7 +48,7 @@ function listenToAllCourses(setCourserList) {
             courseObj.courseId = courseDB.id;
             coursesTemp.push(courseObj)
         })
-        setCourserList(coursesTemp)
+        setCoursesList(coursesTemp)
     })
 }
 
