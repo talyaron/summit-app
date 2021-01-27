@@ -5,10 +5,9 @@ import {useState, useEffect} from 'react';
 //import instructor course css
 
 export const InstructorCourse = props => {
-    //using an already made courseId for now
     
-    const {courseId}=props;
-    console.log(courseId);
+    const {courseId, user}=props;
+    console.log(user);
    
 
     //set useStates 
@@ -65,10 +64,9 @@ export const InstructorCourse = props => {
                     <button className="edit" onClick={editDate}>edit</button>
                 </div>
                 <div id="instructors">
-                    {/* <div>{instructors.map((instructor, index=>{
-                    return(<p key={index}>{instructor}</p>)
-                    }))}
-                    </div> */}
+                        {instructors.map((instructor, index)=> {
+                            return (<p key={index}>{instructor}</p>)
+                        })}
                 </div>
             </div>
             {/* <StudentList></StudentList> */}
