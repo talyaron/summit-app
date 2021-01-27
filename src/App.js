@@ -20,6 +20,7 @@ import BottomNav from './view/Pages/BottomNav/BottomNav';
 
 //functions
 import {onAuth} from './control/firebase/login'
+import SideNav from "./view/Components/SideNav/SideNav";
 
 export default function App() {
 
@@ -89,6 +90,9 @@ export default function App() {
           </Route>
           <Route path="/BottomNav"> 
             <BottomNav/>
+          </Route>
+          <Route path="/SideNav"> 
+            <SideNav/>
           </Route>
           
         </Switch>
