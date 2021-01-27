@@ -10,7 +10,7 @@ export const MainCourse = (props) => {
     return (
         <div id='mainPage'>
            
-                <img src={course.image} alt='course img' />
+                <img src={course.image} alt='course img' id='imageId' />
             
             <div id="courseName">
                 <p>{course.name}</p>

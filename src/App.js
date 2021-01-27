@@ -51,7 +51,7 @@ export default function App() {
             <Link to='/Profile'>Profile</Link>
           </li>
           <li>
-            <Link to='/MainCourses'>Main Courses</Link>
+            <Link to='/MainCourses'>All Courses</Link>
           </li>
           <li>
             <Link to='/course/Q5U4t5de4H1YoWLYSWlu'>a course</Link>
