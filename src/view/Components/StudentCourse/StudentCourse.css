@@ -22,8 +22,15 @@ img{
 #chat{
     display:inline-block;
     margin:15px;
-    background-color: grey;
+    background-color:white;
+    border:none;
+
     
+}
+
+#chat>img{
+    width:25px;
+    height:25px;
 }
 #courseName{
     display:inline-block;
