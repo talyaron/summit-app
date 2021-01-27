@@ -12,6 +12,7 @@ export const InstructorCourse = props => {
     const { courseId, user } = props;
     const [openCourseModal, setOpenCourseModal] = useState(false);
     const [openDateModal, setOpenDateModal] = useState(false);
+    const [openImageModal, setOpenImageModal]=useState(false);
     const [modalText, setModalText] = useState('');
 
     // const [updateFunction, setUpdateFunction]=useState(()=>{})
@@ -58,10 +59,13 @@ export const InstructorCourse = props => {
         }
 
         function editImageSrc() {
+            setOpenImageModal(true);
+            setModalText('Edit Course Image Source')
         }
 
         function editDate() {
-            setOpenDateModal(true)
+            setOpenDateModal(true);
+            setModalText('Edit Course Date')
 
 
         }
@@ -96,6 +100,7 @@ export const InstructorCourse = props => {
                 {/* <StudentList></StudentList> */}
                 {openCourseModal ? <EditCourseNameModal /> : null}
                 {openDateModal ? <EditDateModal /> : null}
+                {openImageModal ? <EditImageModal/> :null}
             </div>
         )
 
@@ -149,15 +154,44 @@ export const InstructorCourse = props => {
             function updateField(e) {
                 e.preventDefault()
                 const newFieldValue = e.target.children.newValue.value;
-                updateCourseNameDB(newFieldValue, courseId);
+                updateCourseDateDB(newFieldValue, courseId);
                 setOpenDateModal(false)
 
 
             }
 
-            function updateCourseNameDB(newValue, courseId) {
+            function updateCourseDateDB(newValue, courseId) {
                 DB.collection('courses').doc(courseId).update({ dates: { start: new Date(newValue) } })
                     .then(() => { console.info('course date was updated') })
+                    .catch(e => { console.error(e) })
+            }
+        }
+
+        function EditImageModal(props) {
+
+            return (
+                <div className='modal'>
+                    <div className='modal__box'>
+                        <p>Edit Course Image Source</p>
+                        <form onSubmit={updateField}>
+                            <input type='text' name='newValue' placeholder='Enter new value'></input>
+                            <button type='submit'>Update</button>
+                            <button onClick={() => { setOpenCourseModal(false) }}>Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            )
+
+            function updateField(e) {
+                e.preventDefault()
+                const newFieldValue = e.target.children.newValue.value;
+                updateCourseImageDB(newFieldValue, courseId);
+                setOpenImageModal(false)
+            }
+
+            function updateCourseImageDB(newValue, courseId) {
+                DB.collection('courses').doc(courseId).update({ image: newValue })
+                    .then(() => { console.info('course image was updated') })
                     .catch(e => { console.error(e) })
             }
         }
