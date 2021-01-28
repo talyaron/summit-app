@@ -15,7 +15,7 @@ import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
 import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
-import BottomNav from './view/Pages/BottomNav/BottomNav';
+
 
 
 //functions
@@ -55,7 +55,7 @@ export default function App() {
             <Link to='/MainCourses'>All Courses</Link>
           </li>
           <li>
-            <Link to='/course/Q5U4t5de4H1YoWLYSWlu'>a course</Link>
+            <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
           </li>
           <li>
             <Link to='/BottomNav'>Nav</Link>
@@ -88,6 +88,7 @@ export default function App() {
           <Route path="/MainCourses">
             <MainCourses/>
           </Route>
+<<<<<<< HEAD
           <Route path="/BottomNav"> 
             <BottomNav/>
           </Route>
@@ -95,6 +96,9 @@ export default function App() {
             <SideNav/>
           </Route>
           
+=======
+        
+>>>>>>> dev
         </Switch>
       </div>
     </Router>

@@ -26,10 +26,7 @@ export const StudentCourse = props => {
                 setImageSource(courseDB.data().image);
                 setInstructors(courseDB.data().instructors);
 
-                if (typeof courseDB.data().dates.start.seconds === 'number') {
-
-                    setDates(courseDB.data().dates.start.seconds * 1000);
-                }
+                setDates(new Date(courseDB.data().dates.start.seconds * 1000).toDateString());
             })
 
             studentInClass=inClass();
@@ -94,7 +91,7 @@ export const StudentCourse = props => {
             <div className="studentCourse">
                 <img src={imageSource}></img>
                 <br></br>
-                <button id="chat" onClick={goToChat}>Chat</button>
+                <button id="chat" onClick={goToChat}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQxNYVg6CZ_oMz7pUyT01q-cDY0asFqmmNg&usqp=CAU"/></button>
                 <p id="courseName">{courseName}</p>
                 <div id="instructorAndDate">
                     {/*need to check how set these states */}
