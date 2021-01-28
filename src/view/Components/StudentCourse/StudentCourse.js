@@ -94,7 +94,6 @@ export const StudentCourse = props => {
                 <button id="chat" onClick={goToChat}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQxNYVg6CZ_oMz7pUyT01q-cDY0asFqmmNg&usqp=CAU"/></button>
                 <p id="courseName">{courseName}</p>
                 <div id="instructorAndDate">
-                    {/*need to check how set these states */}
                     <span id="date">{dates} - </span>
                     <span id="instructors">
                         {instructors.map((instructor, index) => {

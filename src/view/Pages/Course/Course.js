@@ -49,7 +49,6 @@ export const Course = () => {
     if (userRole === 'student') {
         return (
             <div className="studentCoursePage">
-                STUDENT
                 <StudentCourse courseId={courseId} user={user}></StudentCourse>
             </div>
         )

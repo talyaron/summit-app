@@ -179,6 +179,7 @@ export const InstructorCourse = props => {
                             <button onClick={() => { setOpenCourseModal(false) }}>Cancel</button>
                         </form>
                     </div>
+                    
                 </div>
             )
 
