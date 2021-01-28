@@ -10,7 +10,6 @@ let BottomNav = function () {
            <li> <Link to='/MainCourses'></Link> <div id = 'button2' className='nav__button' onClick> All Courses </div> </li> 
            <li> <Link to='/Courses'></Link><div id = 'button3' className='nav__button' onClick> My Courses </div> </li> 
             
-            
         </div>
     )
 }

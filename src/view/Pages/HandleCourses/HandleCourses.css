@@ -46,3 +46,8 @@
 .imageUp{
    transform: rotate(180deg);
 }
+
+#sortingImage {
+   width: 100px;
+   height: 100px;
+}

@@ -20,6 +20,7 @@ import MainCourses from './view/Pages/MainCourses/MainCourses';
 
 //functions
 import {onAuth} from './control/firebase/login'
+import SideNav from "./view/Components/SideNav/SideNav";
 
 export default function App() {
 
@@ -86,6 +87,9 @@ export default function App() {
           </Route>
           <Route path="/MainCourses">
             <MainCourses/>
+          </Route>
+          <Route path="/SideNav">
+            <SideNav/>
           </Route>
         
         </Switch>
