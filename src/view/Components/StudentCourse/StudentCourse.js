@@ -95,7 +95,7 @@ export const StudentCourse = props => {
                 <p id="courseName">{courseName}</p>
                 <div id="instructorAndDate">
                     {/*need to check how set these states */}
-                    <span id="date">{dates}</span>
+                    <span id="date">{dates} - </span>
                     <span id="instructors">
                         {instructors.map((instructor, index) => {
                             return (<p key={index}>{instructor}</p>)
