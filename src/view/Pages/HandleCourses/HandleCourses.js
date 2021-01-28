@@ -85,7 +85,11 @@ function handleClose(e){
                 return (
                     <div className='courseBox' key={course.id}>
                         <div className="box2">
+<<<<<<< HEAD
                             {'Date: ' + course.dates.start.split('T').join(',  Time: ')}
+=======
+                            {new Date(course.dates.start.seconds*1000).toString()}
+>>>>>>> dev
                         </div>
                         <div className="box2">
                             Instructor: {course.instructors}
@@ -108,7 +112,11 @@ function handleClose(e){
                     <br />
                     Instructor's Name: <input type="text" placeholder="text here" />
                     <br />
+<<<<<<< HEAD
                     Date: <input type="datetime-local" />
+=======
+                    Date: <input type="date" />
+>>>>>>> dev
                     <br />
                     Picture URL: <input type="text" placeholder="text here" />
                     <br />
