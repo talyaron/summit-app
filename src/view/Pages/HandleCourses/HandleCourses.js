@@ -34,7 +34,7 @@ const HandleCourses = () => {
         console.log("hello"+e)
         let courseName = e.target.children[0].value
         let teacherName = e.target.children[2].value
-        let date = e.target.children[4].value
+        let date = new Date(e.target.children[4].value)
         let image = e.target.children[6].value
         let active = e.target.children[8].checked
         console.log(courseName, teacherName, date, image)
@@ -71,6 +71,10 @@ function handleClose(e){
         addingForm.style.visibility = "hidden"
 }
 
+/*function handleDelete(e){
+    console.log(e)
+}*/
+
     return (
         <div className='div'>
             <h1 style={{ textAlign: 'center' }}>Courses</h1>
@@ -80,10 +84,10 @@ function handleClose(e){
            
 
 
-            {coursesDB.map(course => {
+            {coursesDB.map((course, index) => {
 
                 return (
-                    <div className='courseBox' key={course.id}>
+                    <div className='courseBox' key={index}>
                         <div className="box2">
                             {new Date(course.dates.start.seconds*1000).toString()}
                         </div>
@@ -96,6 +100,11 @@ function handleClose(e){
                         <div className="box2">
                             <img className='image' src={course.image} alt={"picture of" + course.name} />
                         </div>
+                        <button onClick={() => {
+                            let thisDoc = DB.collection('courses').where('name', '==', course.name)
+                            console.log(thisDoc)
+                            delete(thisDoc.ref)
+                        }}>Delete</button>
                     </div>
                 )
             })}
@@ -108,12 +117,10 @@ function handleClose(e){
                     <br />
                     Instructor's Name: <input type="text" placeholder="text here" />
                     <br />
-                    Date: <input type="date" />
+                    Date: <input type="datetime-local" />
                     <br />
                     Picture URL: <input type="text" placeholder="text here" />
                     <br />
-                    Active:<input id="active" type="checkbox"/>
-                    <br/>
                     <input type="submit" />
                 </form>
                 <button className='close' onClick={handleClose}>Close</button>
