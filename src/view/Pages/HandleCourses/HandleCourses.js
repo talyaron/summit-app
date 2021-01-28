@@ -96,7 +96,7 @@ function handleClose(e){
                         <div className="box2">
                             <img className='image' src={course.image} alt={"picture of" + course.name} />
                         </div>
-                    </div>k
+                    </div>
                 )
             })}
             <button className='button' onClick={AddCourse}>+</button>
