@@ -88,17 +88,10 @@ export default function App() {
           <Route path="/MainCourses">
             <MainCourses/>
           </Route>
-<<<<<<< HEAD
-          <Route path="/BottomNav"> 
-            <BottomNav/>
-          </Route>
-          <Route path="/SideNav"> 
+          <Route path="/SideNav">
             <SideNav/>
           </Route>
-          
-=======
         
->>>>>>> dev
         </Switch>
       </div>
     </Router>
