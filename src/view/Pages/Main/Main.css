@@ -1,5 +1,10 @@
 .main{
     display: grid;
     grid-template-rows: fit-content(10px) auto fit-content(10px);
-    height: 80vh;
+    height: 80vh;   
+}
+
+#header{
+    display: grid;
+    grid-template-rows: 50px 50px;
 }
