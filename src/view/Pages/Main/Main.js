@@ -7,7 +7,8 @@ import Header from '../../Components/Header/Header';
 import BottomNav from '../../Components/BottomNav/BottomNav';
 
 //function 
-import { fb } from '../../../control/firebase/firebase'
+import { fb } from '../../../control/firebase/firebase';
+import { onAuth } from '../../../control/firebase/login';
 
 
 
@@ -24,28 +25,23 @@ export default function Main() {
     let currentPath = location.pathname;
     sessionStorage.setItem('path', currentPath);
 
-
-    fb.auth().onAuthStateChanged(function (userDB) {
-      if (userDB) {
-        setUser(userDB);
-        console.log('user loged in')
-      } else {
-        setUser({});
-        console.log('user loged out')
-      }
-    });
+    onAuth(setUser);
 
 
   }, [])
 
   useEffect(() => {
+
+
     console.log(user)
     if (user) {
+
       //get user information from the DB
       //check his role in the system
       //check if the user is allowed in this page. if not, redirect to "unauthorized" screen
     }
-  }, [user])
+  }, [user]);
+
   if (user) {
     return (
 
@@ -53,7 +49,6 @@ export default function Main() {
 
         <Header />
         <h1>Main</h1>
-        
       </div>
     )
 

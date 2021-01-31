@@ -5,18 +5,18 @@ import {saveUserToDB} from './set';
 
 const provider = new fb.auth.GoogleAuthProvider();
 
-export function onAuth() {
-    fb.auth()
-        .signInWithPopup(provider)
-        .then((result) => {
+export function onAuth(setUser) {
+    
+    fb.auth().onAuthStateChanged(function(user) {
+        if (user) {
 
-            const user = result.user;
-            console.log(user)
-
-        }).catch((e) => {
-
-            console.error(e)
-        })
+            setUser(user)
+          // User is signed in.
+        } else {
+          // No user is signed in.
+          setUser({})
+        }
+      });
 }
 
 export function loginGoogle() {
