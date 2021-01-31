@@ -8,7 +8,7 @@ export const StudentCourse = props => {
     const { courseId, user } = props;
 
     console.log(user)
-    let studentInClass=false;
+    let studentInClass;
 
 
     //set useStates 
@@ -26,7 +26,7 @@ export const StudentCourse = props => {
                 setImageSource(courseDB.data().image);
                 setInstructors(courseDB.data().instructors);
 
-                setDates(new Date(courseDB.data().dates.start.seconds * 1000).toDateString());
+                setDates(new Date(courseDB.data().dates.start.seconds * 1000).toString());
             })
 
             studentInClass=inClass();
