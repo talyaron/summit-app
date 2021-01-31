@@ -53,7 +53,7 @@ export default function Main() {
 
         <Header />
         <h1>Main</h1>
-        <BottomNav />
+        
       </div>
     )
 
