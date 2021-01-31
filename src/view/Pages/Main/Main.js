@@ -39,8 +39,11 @@ export default function Main() {
   }, [])
 
   useEffect(() => {
+    
+    const user = sessionStorage.getItem("user")
     console.log(user)
     if (user) {
+
       //get user information from the DB
       //check his role in the system
       //check if the user is allowed in this page. if not, redirect to "unauthorized" screen
@@ -53,7 +56,6 @@ export default function Main() {
 
         <Header />
         <h1>Main</h1>
-        
       </div>
     )
 

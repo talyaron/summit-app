@@ -103,6 +103,7 @@ function handleClose(e){
                         <button onClick={() => {
                             let thisDoc = DB.collection('courses').where('name', '==', course.name)
                             console.log(thisDoc)
+        
                             delete(thisDoc.ref)
                         }}>Delete</button>
                     </div>
