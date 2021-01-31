@@ -1,0 +1,5 @@
+.main{
+    display: grid;
+    grid-template-rows: fit-content(10px) auto fit-content(10px);
+    height: 80vh;
+}

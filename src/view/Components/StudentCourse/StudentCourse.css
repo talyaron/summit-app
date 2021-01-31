@@ -1,0 +1,46 @@
+.joinOrLeave{
+    background-color:pink;
+    border-color:pink;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:13px;
+    padding-bottom:13px;
+    font-weight: 900;
+    color: white;
+
+}
+img{
+    width:325px;
+    height:200px;
+}
+
+.studentCourse{
+    text-align:center;
+    
+}
+
+#chat{
+    display:inline-block;
+    margin-right:15px;
+    margin-top:20px;
+    background-color:white;
+    border:none;
+}
+
+
+#courseName{
+    font-weight:bold;
+}
+
+#date{
+    margin-right:5px;
+}
+
+
+#chat>img{
+    width:25px;
+    height:25px;
+}
+#courseName{
+    display:inline-block;
+}
