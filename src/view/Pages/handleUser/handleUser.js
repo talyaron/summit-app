@@ -49,9 +49,14 @@ function Users() {
                     </div>
                 </div>
             </div>
-            {users.filter(u => { if(filter === "none") return true else return u.role === filter }).map(u => {
+            {users.filter(u => { if(filter === "none" || filter === "dateAdded") return true else return u.role === filter }).sort((u1,u2) => {
+                if(u1.createdAt > u2.createdAt) return 1;
+                if(u2.createdAt > u1.createdAt) return -1;
+                return 0;
+            }).map(u => {
                 const [role, setRole] = useState(u.role);
-                <div>
+                let color = (u.role === "public") ? "#9ac476" : "#dcdde0";
+                <div style={{backgroundColor:color}}>
                     <div className="gridHandleUsers">
                         <div className="courseNames">
                             <ul>
