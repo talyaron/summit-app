@@ -49,7 +49,7 @@ let MyCourses = function (){
 
     return(
         <div className="myCourses">
-            My Courses
+           <div id='title'>My Courses</div> 
             {classes.map((myClass,index)=>{
                 return(<div key={index} className="myClass">
                     <MyCourse  courseId={myClass}/>

@@ -1,0 +1,34 @@
+.myClass{
+    background-color:pink;
+    border-color:pink;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:13px;
+    padding-bottom:13px;
+    font-weight: 900;
+    color: white;
+    text-align:center;
+    margin: auto;
+    border:none;
+    width: 400px;
+}
+
+img{
+    width:325px;
+    height:200px;
+}
+
+#title{
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+    background-color: pink;
+    width: 400px;
+    margin: auto;
+    border: none;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:13px;
+    padding-bottom:13px;
+}
