@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import './HandleCourses.css';
 import { DB } from '../../../control/firebase/firebase.js';
 
+//components
+import Picture from '../../Components/Picture/Picture'; 
+
 const courseList = DB.collection("courses")
 const sortImg = "https://icon-library.com/images/icon-sort/icon-sort-18.jpg"
 
@@ -98,7 +101,7 @@ const HandleCourses = () => {
                             Course: {course.name}
                         </div>
                         <div className="box2">
-                            <img className='image' src={course.image} alt={"picture of" + course.name} />
+                            <Picture id={course.id} image={course.image} name={course.name}/>
                         </div>
                         <button onClick={() => {
                          
