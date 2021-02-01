@@ -1,4 +1,5 @@
-button{
+/* Alex, we shouldn't style all buttons based on a spesific image (Tal) */
+/* button{
     text-align: center;
     font-size: 14px;
     padding-left: 45px;
@@ -9,7 +10,7 @@ button{
     border-radius: 10px;
     background-color: #4784e6;
     border: none;
-}
+} */
 
 .container{
     height: 70px;
@@ -24,12 +25,12 @@ button{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
-
-img {
+/* Alex, we shouldnt style all images based on a spesific image (Tal) */
+/* img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
     padding-top: 100px;
     padding-bottom: 20px;
-}
+} */
