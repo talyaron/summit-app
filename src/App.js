@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import BottomNav from './view/Components/BottomNav/BottomNav'
+
 
 
 
@@ -17,6 +17,8 @@ import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
 import MyCourses from'./view/Pages/MyCourses/MyCourses';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
+import BottomNav from './view/Components/BottomNav/BottomNav';
+import Header from './view/Components/Header/Header';
 
 
 
@@ -39,6 +41,7 @@ export default function App() {
   return (
     <Router>
       <div>
+        <Header page = {window.location.pathname}/>
         <nav>
           <ul>
             <li>
@@ -60,12 +63,16 @@ export default function App() {
             <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
           </li>
           
+<<<<<<< Updated upstream
           <li>
             <Link to='/SideNav'>SideNav</Link>
           </li>
           <li>
             <Link to='/MyCourses'> My Courses</Link>
           </li>
+=======
+         
+>>>>>>> Stashed changes
           </ul>
 
         </nav>
@@ -91,6 +98,7 @@ export default function App() {
           <Route path="/MainCourses">
             <MainCourses/>
           </Route>
+<<<<<<< Updated upstream
           <Route path="/MyCourses">
             <MyCourses/>
           </Route>
@@ -98,6 +106,12 @@ export default function App() {
             <SideNav/>
           </Route>
           
+=======
+          
+           
+          
+        
+>>>>>>> Stashed changes
         </Switch>
       </div>
       <BottomNav />
@@ -108,3 +122,4 @@ export default function App() {
   );
   
 }
+
