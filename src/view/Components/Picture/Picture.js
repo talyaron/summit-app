@@ -11,7 +11,7 @@ const Picture = (props) => {
 
 
     function addPicture() {
-        document.getElementById("pictuerToAdd").click();
+        // document.getElementById("pictuerToAdd").click();
     }
 
     // functions
