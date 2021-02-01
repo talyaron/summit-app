@@ -16,9 +16,7 @@ export const InstructorCourse = props => {
     const [modalText, setModalText] = useState('');
 
     // const [updateFunction, setUpdateFunction]=useState(()=>{})
-    console.log(user);
-
-
+    
     //set useStates 
     const [courseName, setCourseName] = useState('');
     const [imageSource, setImageSource] = useState('');
@@ -29,7 +27,7 @@ export const InstructorCourse = props => {
     try {
         useEffect(() => {
             const unsubscribe = DB.collection('courses').doc(`${courseId}`).onSnapshot(courseDB => {
-                console.log(courseDB.data())
+           
                 setCourseName(courseDB.data().name);
                 setImageSource(courseDB.data().image);
                 setInstructors(courseDB.data().instructors);

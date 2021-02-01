@@ -17,10 +17,10 @@ export const StudentList= props =>{
                     let studentObj={name:studentDB.data().name, image:studentDB.data().image, uid:studentDB.id};
                     studentsTemp.push(studentObj);
                 })
-                console.log(studentsTemp);
+            
                 setStudents(studentsTemp);
             })
-            currClass=checkCurrentClass();
+           checkCurrentClass();
             //console.log("class:", currClass)
             setCurrentClass(currClass);
             //need to check current class here and set current class
@@ -30,10 +30,19 @@ export const StudentList= props =>{
         },[])
 
         function checkCurrentClass(){
-            DB.collection('courses').doc(courseId).collection('lesson').onSnapshot(lessonsDB=>{
-                //need to figure out which lesson is the most recent lesson
-                //return that lesson ID as the current class
-                //for now:
+
+            let EndOfCourse = new Date(new Date().getTime()+ 1000*60*60*2);
+            let currentTime = new Date(new Date().getTime()- 1000*60*60*8);
+           
+
+            DB.collection('courses').doc(courseId).collection('lesson').where('time','>',currentTime).where('time','<', EndOfCourse).orderBy('time', 'desc').onSnapshot(lessonsDB=>{
+                const userTables = []
+                lessonsDB.forEach(lessonDB=>{
+                    console.log(lessonDB.data());
+                    userTables.push({...lessonDB.data(), id: lessonDB.id})
+                })
+                console.log(userTables)
+                //set a state
             })
             return "current class";
         }
