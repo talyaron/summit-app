@@ -47,9 +47,12 @@ export const StudentList= props =>{
             return "current class";
         }
 
-        function checkAttendance(student){
+        function checkAttendance(e,student){
             console.log(student);
+            console.log(e.target.checked)
             //using the id of the current class, need to add the student and their info to the lesson list
+
+            //https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array
         }
 
     return(
@@ -62,11 +65,11 @@ export const StudentList= props =>{
             {students.map((student,index)=>{
                 return (<div key={index} className="studentAndAttendance">
                     <div id="student" className="studentAndAttendanceItem">
-                        <div className="studentImage"><img src={student.image}/></div>
+                        <div className="studentImage"><img src={student.image} alt={`student ${student.name}`}/></div>
                         <div className="studentName">{student.name}</div>
                     </div>
                     <div id="attendance" className="studentAndAttendanceItem">
-            <p>In Class?<input type="checkbox" className="check" /></p>
+            <p>In Class?<input type="checkbox" className="check" onChange={e=>{checkAttendance(e,student)}} /></p>
             {/* If the check box is checked I want it to call this function {checkAttendance(student)} */}
                     </div>
                 </div>)
