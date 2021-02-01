@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import BottomNav from './view/Components/BottomNav/BottomNav'
+
 
 
 
@@ -15,8 +15,9 @@ import Main from './view/Pages/Main/Main'
 import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
 import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
-import MyCourses from'./view/Pages/MyCourses/MyCourses';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
+import BottomNav from './view/Components/BottomNav/BottomNav';
+import Header from './view/Components/Header/Header';
 
 
 
@@ -39,6 +40,7 @@ export default function App() {
   return (
     <Router>
       <div>
+        <Header page = 'hello;'/>
         <nav>
           <ul>
             <li>
@@ -62,9 +64,6 @@ export default function App() {
           
           <li>
             <Link to='/SideNav'>SideNav</Link>
-          </li>
-          <li>
-            <Link to='/MyCourses'> My Courses</Link>
           </li>
           </ul>
 
@@ -91,13 +90,10 @@ export default function App() {
           <Route path="/MainCourses">
             <MainCourses/>
           </Route>
-          <Route path="/MyCourses">
-            <MyCourses/>
-          </Route>
           <Route path="/SideNav">
             <SideNav/>
           </Route>
-          
+        
         </Switch>
       </div>
       <BottomNav />
@@ -108,3 +104,4 @@ export default function App() {
   );
   
 }
+
