@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import { DB } from '../../../control/firebase/firebase';
+import StudentList from '../../Components/StudentList/StudentList';
 
 //importing components
 import InstructorCourse from '../../Components/InstructorCourse/InstructorCourse'
@@ -57,6 +58,7 @@ export const Course = () => {
         return (
             <div className="instructorCoursePage">
                 <InstructorCourse courseId={courseId} user={user}></InstructorCourse>
+                <StudentList courseId={courseId}></StudentList>
             </div>
         )
     } else {

@@ -6,9 +6,9 @@ import {Link} from "react-router-dom";
 let BottomNav = function () {
     return (
         <div className='nav'>
-           <li> <Link to='/MainCourses'></Link> <div id = 'button1' className='nav__button' onClick> Chat </div> </li> 
-           <li> <Link to='/MainCourses'></Link> <div id = 'button2' className='nav__button' onClick> All Courses </div> </li> 
-           <li> <Link to='/Courses'></Link><div id = 'button3' className='nav__button' onClick> My Courses </div> </li> 
+           <div> <Link to='/MainCourses'><div id = 'button1' className='nav__button'> Chat </div></Link>  </div> 
+           <div> <Link to='/MainCourses'> <div id = 'button2' className='nav__button'> All Courses </div> </Link> </div> 
+           <div> <Link to='/Profile'><div id = 'button3' className='nav__button'> My Courses </div> </Link></div> 
             
         </div>
     )

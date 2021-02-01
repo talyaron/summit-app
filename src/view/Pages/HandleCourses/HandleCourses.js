@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import './HandleCourses.css';
 import { DB } from '../../../control/firebase/firebase.js';
 
+//components
+import Picture from '../../Components/Picture/Picture'; 
+
 const courseList = DB.collection("courses")
 const sortImg = "https://icon-library.com/images/icon-sort/icon-sort-18.jpg"
 
@@ -15,13 +18,13 @@ const HandleCourses = () => {
             querySnapshot.forEach(course => {
                 let courseObj = course.data();
                 courseObj.id = course.id;
-                coursesTempArray.push(course.data());
+                coursesTempArray.push(courseObj);
                 console.log(coursesTempArray)
             })
             setCourses(coursesTempArray)
         })
-          
-          },[])
+
+    }, [])
 
 
     function AddCourse() {
@@ -31,24 +34,24 @@ const HandleCourses = () => {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("hello"+e)
+        console.log("hello" + e)
         let courseName = e.target.children[0].value
         let teacherName = e.target.children[2].value
         let date = new Date(e.target.children[4].value)
         let image = e.target.children[6].value
         let active = e.target.children[8].checked
         console.log(courseName, teacherName, date, image)
-        DB.collection('courses').add({name: courseName, instructors: teacherName, image: image, dates: {start: date}, active: active})
+        DB.collection('courses').add({ name: courseName, instructors: teacherName, image: image, dates: { start: date }, active: active })
 
         let addingForm = document.getElementById("AddCourseDiv")
         addingForm.style.visibility = "hidden"
     }
 
     function changeSortDirection(e) {
-      
+
         let coursesT = [...coursesDB];
-       
-        
+
+
 
         if (e.target.className === "imageUp") {
             e.target.className = "imagedown";
@@ -60,20 +63,20 @@ const HandleCourses = () => {
             coursesT.sort((a, b) => b.dates.start - a.dates.start);
         }
 
-        
+
         setCourses(coursesT)
 
 
     }
 
-function handleClose(e){
-    let addingForm = document.getElementById("AddCourseDiv")
+    function handleClose(e) {
+        let addingForm = document.getElementById("AddCourseDiv")
         addingForm.style.visibility = "hidden"
-}
+    }
 
-/*function handleDelete(e){
-    console.log(e)
-}*/
+    /*function handleDelete(e){
+        console.log(e)
+    }*/
 
     return (
         <div className='div'>
@@ -81,15 +84,15 @@ function handleClose(e){
 
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
-           
+
 
 
             {coursesDB.map((course, index) => {
-
+                console.log(course)
                 return (
                     <div className='courseBox' key={index}>
                         <div className="box2">
-                            {new Date(course.dates.start.seconds*1000).toString()}
+                            {new Date(course.dates.start.seconds * 1000).toString()}
                         </div>
                         <div className="box2">
                             Instructor: {course.instructors}
@@ -98,12 +101,16 @@ function handleClose(e){
                             Course: {course.name}
                         </div>
                         <div className="box2">
-                            <img className='image' src={course.image} alt={"picture of" + course.name} />
+                            <Picture id={course.id} image={course.image} name={course.name}/>
                         </div>
                         <button onClick={() => {
-                            let thisDoc = DB.collection('courses').where('name', '==', course.name)
-                            console.log(thisDoc)
-                            delete(thisDoc.ref)
+                         
+                            if (window.confirm("האם אתם בטוחים שאתם רוצים למחוק את הקורס?")) {
+                                DB.collection('courses').doc(course.id).delete()
+                                    .then(() => { console.info(`Course with id ${course.id} was deleted`) })
+                            }
+
+
                         }}>Delete</button>
                     </div>
                 )

@@ -1,8 +1,12 @@
 .nav{
     display: flex;
+    width: 100%;
     
     
-    
+}
+
+.nav>div{
+    flex: 1;
 }
 .nav__button{
     background-color: rgb(221, 221, 221);

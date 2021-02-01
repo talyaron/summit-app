@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import BottomNav from './view/Components/BottomNav/BottomNav'
 
 
 
@@ -57,9 +58,7 @@ export default function App() {
           <li>
             <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
           </li>
-          <li>
-            <Link to='/BottomNav'>Nav</Link>
-          </li>
+          
           <li>
             <Link to='/SideNav'>SideNav</Link>
           </li>
@@ -94,6 +93,7 @@ export default function App() {
         
         </Switch>
       </div>
+      <BottomNav />
     </Router>
   
   

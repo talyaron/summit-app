@@ -2,7 +2,7 @@ import React from 'react';
 import './InstructorCourse.css';
 import { DB } from '../../../control/firebase/firebase'
 import { useState, useEffect } from 'react';
-// import StudentList from '../StudentList/StudentList'
+
 //import instructor course css
 
 
@@ -37,7 +37,7 @@ export const InstructorCourse = props => {
 
 
 
-                setDates(new Date(courseDB.data().dates.start.seconds * 1000).toDateString());
+                setDates(new Date(courseDB.data().dates.start.seconds * 1000).toString());
 
             })
             return () => {
@@ -97,7 +97,6 @@ export const InstructorCourse = props => {
                         })}
                     </div>
                 </div>
-                {/* <StudentList></StudentList> */}
                 {openCourseModal ? <EditCourseNameModal /> : null}
                 {openDateModal ? <EditDateModal /> : null}
                 {openImageModal ? <EditImageModal/> :null}
@@ -176,10 +175,9 @@ export const InstructorCourse = props => {
                         <form onSubmit={updateField}>
                             <input type='text' name='newValue' placeholder='Enter new value'></input>
                             <button type='submit'>Update</button>
-                            <button onClick={() => { setOpenCourseModal(false) }}>Cancel</button>
+                            <button onClick={() => { setOpenImageModal(false) }}>Cancel</button>
                         </form>
                     </div>
-                    
                 </div>
             )
 
