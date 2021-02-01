@@ -17,7 +17,7 @@ export default function Header(props) {
 
     return (
         <div>
-            Summit- My App
+            מרכז סאמיט
             <button className = 'header_button' onClick = {setShow}>=</button>
             {showNav ? <SideNav /> : null}
         </div>
