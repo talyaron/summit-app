@@ -1,6 +1,12 @@
 import React from 'react';
 import './MainCourse.css';
 
+import {
+    BrowserRouter as Router,
+
+    Link
+} from "react-router-dom";
+
 export const MainCourse = (props) => {
 
     const { course } = props;
@@ -9,7 +15,7 @@ export const MainCourse = (props) => {
 
     return (
         <div className='courseCard'>
-           
+           <Link to={`/course/${course}`} >
                 <img src={course.image} id='imageId' />
             
          
@@ -21,6 +27,7 @@ export const MainCourse = (props) => {
             <div id="time">
                             {Date(course.dates.start.seconds)}
                         </div>
+                        </Link>
         </div>
     )
 }
