@@ -41,7 +41,7 @@ let MyCourses = function (){
                         //console.log(userDB.data())
                         //userInfo=userDB.data;
                         setUser(userDB.data())
-                        setUser(user)
+                        setUser(userDB)
                         
                     }
                 })
