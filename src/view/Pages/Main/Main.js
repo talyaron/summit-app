@@ -7,7 +7,7 @@ import Header from '../../Components/Header/Header';
 import BottomNav from '../../Components/BottomNav/BottomNav';
 
 //function 
-import { fb } from '../../../control/firebase/firebase';
+import { DB, fb } from '../../../control/firebase/firebase';
 import { onAuth } from '../../../control/firebase/login';
 
 
@@ -30,19 +30,25 @@ export default function Main() {
 
   }, [])
 
-  useEffect(() => {
+  /*useEffect(() => {
 
 
     console.log(user)
+    
     if (user) {
-
+      setUser(sessionStorage.getItem("user"))
+      console.log(user)
       //get user information from the DB
+     // DB.collection("users").doc(user.uid).get().then(e=>{
+     //   let userRole = e.data().role
+     // })
       //check his role in the system
       //check if the user is allowed in this page. if not, redirect to "unauthorized" screen
     }
-  }, [user]);
+  }, [user]);*/
 
   if (user) {
+    console.log(user)
     return (
 
       <div className='main' >
@@ -53,10 +59,6 @@ export default function Main() {
     )
 
   } else {
-    return (<h1>unauthorized - go to login</h1>)
-  }
+      return (<h1>unauthorized - go to login</h1>)
+    }
 }
-
-
-
-
