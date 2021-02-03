@@ -10,12 +10,12 @@ import {
 export const MainCourse = (props) => {
 
     const { course } = props;
-    console.log(course.image)
+    console.log(course)
    
 
     return (
         <div className='courseCard'>
-           <Link to={`/course/${course}`} >
+           <Link to={`/course/${course.courseId}`} >
                 <img src={course.image} id='imageId' />
             
          
