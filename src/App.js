@@ -16,6 +16,7 @@ import HandleCourses from './view/Pages/HandleCourses/HandleCourses';
 import Profile from './view/Pages/Profile/Profile';
 import Course from './view/Pages/Course/Course';
 import MainCourses from './view/Pages/MainCourses/MainCourses';
+import MyCourses from './view/Pages/MyCourses/MyCourses';
 import BottomNav from './view/Components/BottomNav/BottomNav';
 import Header from './view/Components/Header/Header';
 
@@ -61,7 +62,7 @@ export default function App() {
           <li>
             <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
           </li>
-          
+  
           <li>
             <Link to='/SideNav'>SideNav</Link>
           </li>
