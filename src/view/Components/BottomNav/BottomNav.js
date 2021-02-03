@@ -8,7 +8,7 @@ let BottomNav = function () {
         <div className='nav'>
            <div> <Link to='/MainCourses'><div id = 'button1' className='nav__button'> Chat </div></Link>  </div> 
            <div> <Link to='/MainCourses'> <div id = 'button2' className='nav__button'> All Courses </div> </Link> </div> 
-           <div> <Link to='/Profile'><div id = 'button3' className='nav__button'> My Courses </div> </Link></div> 
+           <div> <Link to='/MyCourses'><div id = 'button3' className='nav__button'> My Courses </div> </Link></div> 
             
         </div>
     )

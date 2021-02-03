@@ -47,7 +47,7 @@ export default function Main() {
 
       <div className='main' >
 
-        <Header />
+        
         <h1>Main</h1>
       </div>
     )
