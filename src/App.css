@@ -1,3 +1,20 @@
 .App {
   background-color: red;
 }
+
+/* https://dribbble.com/shots/6631298-New-iOs-Analytics-App-Summary-Screen */
+
+:root {
+  --colorMain: #74B47C;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #28282C;
+}
+
+h2 {
+  color: #010101;
+  font-size: 1.5rem;
+  background-color: var(--colorMain);
+}
