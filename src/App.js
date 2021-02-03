@@ -60,6 +60,9 @@ export default function App() {
             <Link to='/MainCourses'>All Courses</Link>
           </li>
           <li>
+            <Link to='/MyCourses'>My Courses</Link>
+          </li>
+          <li>
             <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
           </li>
   
@@ -87,6 +90,9 @@ export default function App() {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/MyCourses">
+            <MyCourses/>
           </Route>
           <Route path="/MainCourses">
             <MainCourses/>
