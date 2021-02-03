@@ -22,17 +22,14 @@ export const MainCourseList = () => {
 
   
     return (
-        <div>
-            <div className='mainCourses' id='mainCourses'>
-                <h1 style={{ textAlign: 'center' }}>All Courses</h1>
-            </div>
-            <div style={{ textAlign: 'center' }} id = 'mainCoursePage' className="mainCoursePage">
+        <div className="wrapper">
+                <h1>All Courses</h1>
+          
             
             {courseList.map((course, index) => {
                 return (<MainCourse key={index} course={course}></MainCourse>)
             })}
-
-            </div>
+          
         </div>
 
     )
