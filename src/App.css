@@ -2,4 +2,39 @@
   background-color: red;
 }
 
+<<<<<<< HEAD
 
+=======
+/* https://dribbble.com/shots/6631298-New-iOs-Analytics-App-Summary-Screen */
+
+:root {
+  --colorMain: #74B47C;
+
+  --roundCorners:12px
+}
+
+h1 {
+  font-size: 2rem;
+  color: #28282C;
+}
+
+h2 {
+  color: #010101;
+  font-size: 1.5rem;
+ 
+}
+
+.courseCard{
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--roundCorners);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.452);
+  margin-bottom: 10px;
+
+  
+}
+
+.courseCard a{
+  text-decoration: none;
+}
+>>>>>>> dev
