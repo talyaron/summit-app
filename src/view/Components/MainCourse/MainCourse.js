@@ -8,13 +8,13 @@ export const MainCourse = (props) => {
    
 
     return (
-        <div id='mainPage'>
+        <div className='courseCard'>
            
                 <img src={course.image} id='imageId' />
             
-            <div id="courseName">
-                <p>{course.name}</p>
-            </div>
+         
+                <h2>{course.name}</h2>
+           
             <div id="instructor">
                 <p> {course.instructors} </p>
             </div>

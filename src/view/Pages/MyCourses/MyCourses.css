@@ -1,14 +1,12 @@
 .myClass{
-    background-color:pink;
-    border-color:pink;
-    padding-left:40px;
-    padding-right:40px;
-    padding-top:13px;
-    padding-bottom:13px;
-    font-weight: 900;
+   
+   
+   
+
+    
     color: white;
     text-align:center;
-    margin: auto;
+    margin: 0px auto;
     border:none;
     width: 400px;
 }

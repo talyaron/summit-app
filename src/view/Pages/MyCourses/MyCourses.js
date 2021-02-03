@@ -3,17 +3,19 @@ import './MyCourses.css';
 import {DB} from '../../../control/firebase/firebase'
 import {useState,useEffect} from 'react';
 import {Link} from "react-router-dom";
-import MyCourse from '../../Components/MyCourse/MyCourse'
+import MyCourse from '../../Components/MyCourse/MyCourse';
+import { useHistory } from "react-router"
 
 let MyCourses = function (){
     const [user, setUser] = useState({})
     const [classes, setClasses]=useState([])
     let userInfo;
+    const history = useHistory();
 
     useEffect(() => {
-        //getUser();
+        const userObj  = getUser();
         let coursesTemp=[];
-        const unsubscribe=DB.collection('users').doc('pKH7vXjeO8eQ1C8tY4iRnhdFAcr1').collection('courses').onSnapshot(coursesDB=>{
+        const unsubscribe=DB.collection('users').doc(userObj.uid).collection('courses').onSnapshot(coursesDB=>{
             coursesDB.forEach(courseDB=>{
                 let course=courseDB.id;
                 coursesTemp.push(course);
@@ -27,10 +29,10 @@ let MyCourses = function (){
 
     }, [])
 
-    /*
+    
     function getUser() {
         const tmpUser = JSON.parse(sessionStorage.getItem('user'))
-        let user;
+       
         console.log(tmpUser)
         if (tmpUser) {
             DB.collection('users').doc(tmpUser.uid).get()
@@ -39,12 +41,16 @@ let MyCourses = function (){
                         //console.log(userDB.data())
                         //userInfo=userDB.data;
                         setUser(userDB.data())
+                        setUser(user)
                         
                     }
                 })
+                return tmpUser
+        } else{
+            history.push("/login")
         }
 
-    }*/
+    }
 
 
     return(
