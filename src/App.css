@@ -35,3 +35,9 @@ h2 {
   text-decoration: none;
   color: #010101;
 }
+
+.wrapper{
+  color: rgb(219, 215, 215);
+  border-radius: var(--roundCorners);
+  padding: 20px;
+}

@@ -54,13 +54,14 @@ let MyCourses = function (){
 
 
     return(
-        <div className="myCourses">
+        <div className="wrapper">
            <div id='title'>My Courses</div> 
             {classes.map((myClass,index)=>{
                 return(<div key={index} className="myClass">
                     <MyCourse  courseId={myClass}/>
                 </div>)
             })}
+
         </div>
     )
 
