@@ -8,7 +8,7 @@ export default function Login() {
     return (
         <div>
             <div className="logo">
-                <img src="logo.png" alt='logo' />
+                <img src="logo.svg" alt='logo' />
             </div>
             <div className="container">
                 <div className="centerButton">

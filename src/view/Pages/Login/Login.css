@@ -15,6 +15,7 @@
 .container{
     height: 70px;
     position: relative;
+    
 }
 
 .centerButton{
@@ -24,6 +25,7 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    
 }
 /* Alex, we shouldnt style all images based on a spesific image (Tal) */
 /* img {
