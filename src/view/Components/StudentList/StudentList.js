@@ -65,9 +65,11 @@ export const StudentList= props =>{
         }
 
         return(
+            
             <div className="studentList">
                 {currentClasses.map((currentClass,index)=>{
-                    return(<div key={index} className="currClass">
+                    return(<div key={index} className="courseCard" id='students'>
+                        <div className='currClass'>
                         <div className="header">
                             <div className="headerItem">Students:</div>
                             <div className="headerItem">Attendance: {new Date(currentClass.time.seconds*1000).toString()}</div>
@@ -85,9 +87,11 @@ export const StudentList= props =>{
                             </div>)
                          })}
                         </div>
-                    </div>)
+                    </div></div>)
                 })}
             </div>
+            
+            
         )
 
 

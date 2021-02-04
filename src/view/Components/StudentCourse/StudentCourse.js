@@ -88,21 +88,23 @@ export const StudentCourse = props => {
         }
 
         return (
+            
+            <div className='courseCard'>
             <div className="studentCourse">
                 <img src={imageSource}></img>
                 <br></br>
-                <button id="chat" onClick={goToChat}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQxNYVg6CZ_oMz7pUyT01q-cDY0asFqmmNg&usqp=CAU"/></button>
-                <p id="courseName">{courseName}</p>
+                {/*<button id="chat" onClick={goToChat}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQxNYVg6CZ_oMz7pUyT01q-cDY0asFqmmNg&usqp=CAU"/></button>*/}
+                <h2>{courseName}</h2>
                 <div id="instructorAndDate">
-                    <span id="date">{dates} - </span>
-                    <span id="instructors">
+                    <h2 id="date">{dates} - </h2>
+                    <h2 id="instructors">
                         {instructors.map((instructor, index) => {
                             return (<p key={index}>{instructor}</p>)
                         })}
-                    </span>
+                    </h2>
                 </div>
                 <button className="joinOrLeave" onClick={joinOrLeave}>{joinOrLeaveClass}</button>
-            </div>
+            </div></div>
         )
 
     } catch (e) {

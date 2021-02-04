@@ -5,7 +5,7 @@
 /* https://dribbble.com/shots/6631298-New-iOs-Analytics-App-Summary-Screen */
 
 :root {
-  --colorMain: #74B47C;
+  --colorMain: #40a1e2;
 
   --roundCorners:12px
 }
@@ -20,17 +20,21 @@ h1 {
 h2 {
   color: #010101;
   font-size: 1.5rem;
-  font-weight: lighter;
+  font-weight: 400;
+  display:inline-block;
 }
 
 .courseCard{
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: var(--roundCorners);
   box-shadow: 2px 2px 6px #010101;
-  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom:20px;
   width: fit-content;
   text-align: center;
+
   
 }
 
