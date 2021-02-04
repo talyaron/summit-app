@@ -43,6 +43,18 @@ h2 {
   color: #010101;
 }
 
+.courseCard br{
+  margin:none;
+}
+.courseCard h2{
+  margin:5px;
+}
+
+.courseCard img{
+  width:325px;
+  height:200px;
+}
+
 .wrapper{
   background-color: white;
   border-radius: var(--roundCorners);

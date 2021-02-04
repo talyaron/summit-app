@@ -17,7 +17,7 @@ export const MainCourse = (props) => {
         <div className='courseCard'>
            <Link to={`/course/${course.courseId}`} >
                 <img src={course.image} id='imageId' />
-            
+                <br></br>
          
                 <h2>{course.name}</h2>
            

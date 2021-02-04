@@ -38,12 +38,13 @@ export const MyCourse = props => {
                 <br></br>
                 <h2 >{courseName}</h2>
                 <div id="instructorAndDate">
-                    <span id="date">{dates} - </span>
-                    <span id="instructors">
+                <div id="instructors"> 
                         {instructors.map((instructor, index) => {
                             return (<p key={index}>{instructor}</p>)
                         })}
-                    </span>
+                    </div>
+                    <p id="date">{dates} </p>
+                    
                 </div>
                 </Link>
             </div>

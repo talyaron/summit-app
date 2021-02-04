@@ -74,13 +74,14 @@ export const StudentCourse = props => {
             //if the user is not in the class, adds the course to their course list
             if(studentInClass){
                 DB.collection('users').doc(user.uid).collection('courses').doc(courseId).delete();
+                DB.collection('courses').doc(courseId).collection('students').doc(user.uid).delete();
                 console.log('course deleted')
                 studentInClass=false;
                 setJoinOrLeaveClass('JOIN')
             }
             else{
-                //this isn't working
                 DB.collection('users').doc(user.uid).collection('courses').doc(courseId).set({});
+                DB.collection('courses').doc(courseId).collection('students').doc(user.uid).set({name:user.displayName,image:user.photoURL});
                 console.log('course added')
                 studentInClass=true;
                 setJoinOrLeaveClass('LEAVE')
