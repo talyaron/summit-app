@@ -22,7 +22,9 @@ export const MainCourse = (props) => {
                 <h2>{course.name}</h2>
            
             <div id="instructor">
-                <p> {course.instructors} </p>
+                 {course.instructors.map((instructor,index)=>{
+                    return(<p key={index}>{instructor}</p>)
+                })} 
             </div>
             <div id="time">
                             {Date(course.dates.start.seconds)}
