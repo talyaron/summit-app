@@ -80,7 +80,7 @@ const HandleCourses = () => {
 
     return (
         <div className='div'>
-            <h1 style={{ textAlign: 'center' }}>Courses</h1>
+            <h1 >Courses</h1>
 
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
@@ -90,15 +90,16 @@ const HandleCourses = () => {
             {coursesDB.map((course, index) => {
                 console.log(course)
                 return (
-                    <div className='courseBox' key={index}>
+                    <div className='courseCard' key={index}>
+                        <div className='courseBox'>
                         <div className="box2">
-                            {new Date(course.dates.start.seconds * 1000).toString()}
+                           <h2> {new Date(course.dates.start.seconds * 1000).toString()}</h2>
                         </div>
                         <div className="box2">
-                            Instructor: {course.instructors}
+                           <h2> Instructor: {course.instructors}</h2>
                         </div>
                         <div className="box2">
-                            Course: {course.name}
+                           <h2> Course: {course.name}</h2>
                         </div>
                         <div className="box2">
                             <Picture id={course.id} image={course.image} name={course.name}/>
@@ -112,6 +113,7 @@ const HandleCourses = () => {
 
 
                         }}>Delete</button>
+                    </div>
                     </div>
                 )
             })}
