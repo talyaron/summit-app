@@ -4,11 +4,11 @@ import './Header.css';
 
 export default function Header(props) {
 
-    const [showNav, setShowNav] = useState(true)
+    const [showNav, setShowNav] = useState(false)
 
 
     function setShow(e){
-        if(showNav == true){
+        if(showNav === true){
             setShowNav(false);
         }else{
             setShowNav(true);

@@ -1,38 +1,26 @@
 import React from 'react';
 import './MyCourses.css';
-import {DB} from '../../../control/firebase/firebase'
-import {useState,useEffect} from 'react';
-import {Link} from "react-router-dom";
+import { DB } from '../../../control/firebase/firebase'
+import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import MyCourse from '../../Components/MyCourse/MyCourse';
 import { useHistory } from "react-router"
 
-let MyCourses = function (){
+let MyCourses = function () {
     const [user, setUser] = useState({})
-    const [classes, setClasses]=useState([])
+    const [classes, setClasses] = useState([])
     let userInfo;
     const history = useHistory();
 
     useEffect(() => {
-        const userObj  = getUser();
-        let coursesTemp=[];
-        const unsubscribe=DB.collection('users').doc(userObj.uid).collection('courses').onSnapshot(coursesDB=>{
-            coursesDB.forEach(courseDB=>{
-                let course=courseDB.id;
-                coursesTemp.push(course);
-            })
-            console.log(coursesTemp)
-            setClasses(coursesTemp);
-        })
-        return()=>{
-            unsubscribe()
-        }
+        getUserAndCourses();
 
     }, [])
 
-    
-    function getUser() {
+
+    function getUserAndCourses() {
         const tmpUser = JSON.parse(sessionStorage.getItem('user'))
-       
+
         console.log(tmpUser)
         if (tmpUser) {
             DB.collection('users').doc(tmpUser.uid).get()
@@ -41,24 +29,43 @@ let MyCourses = function (){
                         //console.log(userDB.data())
                         //userInfo=userDB.data;
                         setUser(userDB.data())
-                        setUser(userDB)
-                        
+
+
+                        let userId = userDB.id
+
+                        DB.collection('users').doc(userId).collection('courses').onSnapshot(coursesDB => {
+
+                            const coursesTemp = [];
+
+                            coursesDB.forEach(courseDB => {
+                                let course = courseDB.id;
+                                coursesTemp.push(course);
+                            })
+
+                            if (coursesTemp.length === 0) {
+                                history.push('/MainCourses')
+                            } else {
+                                console.log(coursesTemp)
+                                setClasses(coursesTemp);
+                            }
+                        })
+
                     }
                 })
-                return tmpUser
-        } else{
+            return tmpUser
+        } else {
             history.push("/login")
         }
 
     }
 
 
-    return(
+    return (
         <div className="wrapper">
-           <h1 id='title'>My Courses</h1> 
-            {classes.map((myClass,index)=>{
-                return(<div key={index} className="myClass">
-                    <MyCourse  courseId={myClass}/>
+            <h1 id='title'>My Courses</h1>
+            {classes.map((myClass, index) => {
+                return (<div key={index} className="myClass">
+                    <MyCourse courseId={myClass} />
                 </div>)
             })}
 

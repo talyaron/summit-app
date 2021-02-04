@@ -1,4 +1,4 @@
-import React, {useEffect, setState} from "react";
+import React, { useEffect, setState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +25,7 @@ import Header from './view/Components/Header/Header';
 
 
 //functions
-import {onAuth} from './control/firebase/login'
+import { onAuth } from './control/firebase/login'
 import SideNav from "./view/Components/SideNav/SideNav";
 
 export default function App() {
@@ -43,35 +43,35 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Header page = 'hello;'/>
-        { <nav>
+        <Header page='hello;' />
+        {<nav>
           <ul>
-           
+
             <li>
               <Link to="/Login">Login</Link>
             </li>
-          <li>
-            <Link to='/adminCourses'>Courses</Link>
-          </li>
-          <li>
-            <Link to='/Profile'>Profile</Link>
-          </li>
-          <li>
-            <Link to='/MainCourses'>All Courses</Link>
-          </li>
-          
-          <li>
-            <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
-          </li>
-          <li>
-            <Link to='/MyCourses'>My Courses</Link>
-          </li>
-          <li>
-            <Link to='/SideNav'>SideNav</Link>
-          </li>
+            <li>
+              <Link to='/adminCourses'>Courses</Link>
+            </li>
+            <li>
+              <Link to='/Profile'>Profile</Link>
+            </li>
+            <li>
+              <Link to='/MainCourses'>All Courses</Link>
+            </li>
+
+            <li>
+              <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
+            </li>
+            <li>
+              <Link to='/MyCourses'>My Courses</Link>
+            </li>
+            <li>
+              <Link to='/SideNav'>SideNav</Link>
+            </li>
           </ul>
 
-        </nav> }
+        </nav>}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -83,34 +83,34 @@ export default function App() {
             <Course />
           </Route >
           <Route path="/adminCourses">
-            <HandleCourses/>
+            <HandleCourses />
           </Route>
-          <Route exact={true} path="/">
-            <Main />
-          </Route>
+         
           <Route path="/profile">
             <Profile />
           </Route>
-         
- <Route path="/MyCourses">
-            <MyCourses/>
+          <Route path="/MyCourses">
+            <MyCourses />
           </Route>
 
           <Route path="/MainCourses">
-            <MainCourses/>
+            <MainCourses />
           </Route>
           <Route path="/SideNav">
-            <SideNav/>
+            <SideNav />
           </Route>
-        
+          <Route path="/">
+            <MyCourses />
+          </Route>
+
         </Switch>
       </div>
       <BottomNav />
     </Router>
-  
-  
-  
+
+
+
   );
-  
+
 }
 
