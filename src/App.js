@@ -50,25 +50,14 @@ export default function App() {
             <li>
               <Link to="/Login">Login</Link>
             </li>
-            <li>
-              <Link to='/adminCourses'>Courses</Link>
-            </li>
+        
             <li>
               <Link to='/Profile'>Profile</Link>
             </li>
-            <li>
-              <Link to='/MainCourses'>All Courses</Link>
-            </li>
 
-            <li>
-              <Link to='/course/W3ZJrcJXEpIWHPBjohuh'>a course</Link>
-            </li>
-            <li>
-              <Link to='/MyCourses'>My Courses</Link>
-            </li>
-            <li>
-              <Link to='/SideNav'>SideNav</Link>
-            </li>
+            
+    
+    
           </ul>
 
         </nav>}
