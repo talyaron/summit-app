@@ -9,14 +9,19 @@
     flex: 1;
 }
 .nav__button{
-    background-color: rgb(221, 221, 221);
+    background-color:rgba(255, 255, 255, 0.781);
+    box-shadow: 2px 2px 6px #010101;
     padding: 10px;
     flex:1;
     text-align: center;
+    border-radius: 25px;
+    color:black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 .nav__button:hover{
     background-color: rgb(180, 180, 180);
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    
 }
 
