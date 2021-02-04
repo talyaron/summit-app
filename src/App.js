@@ -46,9 +46,7 @@ export default function App() {
         <Header page = 'hello;'/>
         { <nav>
           <ul>
-            <li>
-              <Link to="/">Main</Link>
-            </li>
+           
             <li>
               <Link to="/Login">Login</Link>
             </li>
