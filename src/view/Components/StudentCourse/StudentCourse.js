@@ -97,12 +97,12 @@ export const StudentCourse = props => {
                 {/*<button id="chat" onClick={goToChat}><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScQxNYVg6CZ_oMz7pUyT01q-cDY0asFqmmNg&usqp=CAU"/></button>*/}
                 <h2>{courseName}</h2>
                 <div id="instructorAndDate">
-                    <h2 id="date">{dates} - </h2>
-                    <h2 id="instructors">
+                    <p id="date">{dates}  </p>
+                    <div id="instructors">
                         {instructors.map((instructor, index) => {
                             return (<p key={index}>{instructor}</p>)
                         })}
-                    </h2>
+                    </div>
                 </div>
                 <button className="joinOrLeave" onClick={joinOrLeave}>{joinOrLeaveClass}</button>
             </div></div>
