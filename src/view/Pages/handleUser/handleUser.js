@@ -77,14 +77,14 @@ function Users() {
                                     setRole("instructor")
                                     u.role = "instrutor";
                                     setUser(u);
-                                }}>instructor</a>
+                                }}>מדריכ/ה</a>
                                 <a href="#student" onClick={e => {
                                     e.preventDefault()
                                     setRole("student")
                                     u.role = "student";
                                     setUser(u);
 
-                                }}>student</a>
+                                }}>סטודנט</a>
                                 <a href="#public" onClick={e => {
                                     e.preventDefault()
                                     setRole("public")

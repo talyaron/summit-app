@@ -62,7 +62,7 @@ let MyCourses = function () {
 
     return (
         <div className="wrapper">
-            <h1 id='title'>My Courses</h1>
+            <h1 id='title'>החוגים שלי</h1>
             {classes.map((myClass, index) => {
                 return (<div key={index} >
                     <MyCourse courseId={myClass} />

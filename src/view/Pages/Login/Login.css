@@ -13,19 +13,23 @@
 } */
 
 .container{
-    height: 70px;
-    position: relative;
-    
+width: fit-content;
+ background-color: white;
+  border-radius: var(--roundCorners);
+  padding: 10px;
+  box-shadow: 2px 2px 6px #010101;
+  margin: auto;
 }
 
 .centerButton{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 70px;
+    width: fit-content;
+    color: #40a1e2;
+    font-weight: bolder;
+  text-align: center;
+
 }
 /* Alex, we shouldnt style all images based on a spesific image (Tal) */
 /* img {
@@ -36,3 +40,13 @@
     padding-top: 100px;
     padding-bottom: 20px;
 } */
+
+
+#loginButton{
+    background-color: yellow;
+    border-radius: 12px;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    top: 40px;
+}
