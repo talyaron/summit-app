@@ -24,13 +24,27 @@ width: fit-content;
 .centerButton{
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 70px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top:15px;
+    padding-bottom:15px;
     width: fit-content;
     color: #40a1e2;
     font-weight: bolder;
   text-align: center;
 
 }
+#logoImage{
+   width:320px;
+}
+
+.logo{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:50px;
+    width:fit-content;
+}
+
 /* Alex, we shouldnt style all images based on a spesific image (Tal) */
 /* img {
     display: block;
