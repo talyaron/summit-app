@@ -21,7 +21,7 @@ function SideNav() {
                 </Link>
             </div>
             <div className='div'>
-                <Link to='/'>
+                <Link to='/Login'>
                     <img src='https://steamuserimages-a.akamaihd.net/ugc/271718911515166280/3F0CB3FB274373692F28B58C39D55991882E3E61/' class='iconDetails' />
                     Manage Users
                 </Link>
