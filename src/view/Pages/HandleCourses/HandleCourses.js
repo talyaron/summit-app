@@ -104,7 +104,7 @@ const HandleCourses = () => {
                         <div className="box2">
                             <Picture id={course.id} image={course.image} name={course.name}/>
                         </div>
-                        <button onClick={() => {
+                        <button id="deleteButton" onClick={() => {
                          
                             if (window.confirm("האם אתם בטוחים שאתם רוצים למחוק את הקורס?")) {
                                 DB.collection('courses').doc(course.id).delete()
