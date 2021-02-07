@@ -47,7 +47,7 @@ function SideNav() {
                 </Link>
             </div>
             <div className='div'>
-                <Link to='/adminCourses'>
+                <Link to='/Calendar'>
                     <img src='https://i.pinimg.com/originals/67/ee/ed/67eeed47da114696eaf83536e1d150a5.jpg' class='iconDetails' />
                     Calendar
                 </Link>
