@@ -49,13 +49,8 @@ export default function App() {
         {<nav>
           <ul>
 
-            <li>
-              <Link to="/Login">התחברות</Link>
-            </li>
+           
         
-            <li>
-              <Link to='/Profile'>חשבון</Link>
-            </li>
 
             
     
