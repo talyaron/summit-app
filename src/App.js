@@ -48,11 +48,11 @@ export default function App() {
           <ul>
 
             <li>
-              <Link to="/Login">Login</Link>
+              <Link to="/Login">התחברות</Link>
             </li>
         
             <li>
-              <Link to='/Profile'>Profile</Link>
+              <Link to='/Profile'>חשבון</Link>
             </li>
 
             

@@ -23,7 +23,7 @@ export const MainCourseList = () => {
   
     return (
         <div className="wrapper">
-                <h1>All Courses</h1>
+                <h1>כל החוגים</h1>
           
             
             {courseList.map((course, index) => {

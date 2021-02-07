@@ -3,7 +3,7 @@ import './HandleCourses.css';
 import { DB } from '../../../control/firebase/firebase.js';
 
 //components
-import Picture from '../../Components/Picture/Picture'; 
+import Picture from '../../Components/Picture/Picture';
 
 const courseList = DB.collection("courses")
 const sortImg = "https://icon-library.com/images/icon-sort/icon-sort-18.jpg"
@@ -80,7 +80,7 @@ const HandleCourses = () => {
 
     return (
         <div className='div'>
-            <h1 >Courses</h1>
+            <h1 >חוגים</h1>
 
 
             <img id="sortingImage" className="imageUp" onClick={changeSortDirection} src={sortImg} alt="" />
@@ -92,28 +92,28 @@ const HandleCourses = () => {
                 return (
                     <div className='courseCard' key={index}>
                         <div className='courseBox'>
-                        <div className="box2">
-                           <h2> {new Date(course.dates.start.seconds * 1000).toString()}</h2>
-                        </div>
-                        <div className="box2">
-                           <h2> Instructor: {course.instructors}</h2>
-                        </div>
-                        <div className="box2">
-                           <h2> Course: {course.name}</h2>
-                        </div>
-                        <div className="box2">
-                            <Picture id={course.id} image={course.image} name={course.name}/>
-                        </div>
-                        <button onClick={() => {
-                         
-                            if (window.confirm("האם אתם בטוחים שאתם רוצים למחוק את הקורס?")) {
-                                DB.collection('courses').doc(course.id).delete()
-                                    .then(() => { console.info(`Course with id ${course.id} was deleted`) })
-                            }
+                            <div className="box2">
+                                <h2> {new Date(course.dates.start.seconds * 1000).toString()}</h2>
+                            </div>
+                            <div className="box2">
+                                <h2> מדריכ\ה: {course.instructors}</h2>
+                            </div>
+                            <div className="box2">
+                                <h2> חוג: {course.name}</h2>
+                            </div>
+                            <div className="box2">
+                                <Picture id={course.id} image={course.image} name={course.name} />
+                            </div>
+                            <button onClick={() => {
+
+                                if (window.confirm("האם אתם בטוחים שאתם רוצים למחוק את הקורס?")) {
+                                    DB.collection('courses').doc(course.id).delete()
+                                        .then(() => { console.info(`Course with id ${course.id} was deleted`) })
+                                }
 
 
-                        }}>Delete</button>
-                    </div>
+                            }}>מחק</button>
+                        </div>
                     </div>
                 )
             })}
@@ -122,19 +122,19 @@ const HandleCourses = () => {
 
             <div id="AddCourseDiv">
                 <form onSubmit={handleSubmit}>
-                    Course Name: <input type="text" placeholder="text here" />
+                    שם חוג: <input type="text" placeholder="רשום טקסט" />
                     <br />
-                    Instructor's Name: <input type="text" placeholder="text here" />
+                    שם מדריכ/ה: <input type="text" placeholder="רשום טקסט" />
                     <br />
-                    Date: <input type="datetime-local" />
+                    תאריך: <input type="datetime-local" />
                     <br />
-                    Picture URL: <input type="text" placeholder="text here" />
+                    כתובת תמונה: <input type="text" placeholder="רשום טקסט" />
                     <br />
                     <input type="submit" />
                 </form>
-                <button className='close' onClick={handleClose}>Close</button>
+                <button className='close' onClick={handleClose}>סגור</button>
             </div>
-        </div>
+            </div>
     )
 
 

@@ -16,12 +16,12 @@ function Profile() {
 
     return (
         <div className='profile'>
-            <h1> Profile </h1>
+            <h1> החשבון שלי </h1>
         
           
 <div>
         <div className='Name' key={user.uid}>
-            Name: {user.displayName}
+            שם: {user.displayName}
          </div>
 
          <div className='Photo' key={user.uid}>
