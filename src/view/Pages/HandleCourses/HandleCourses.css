@@ -2,6 +2,7 @@
    display: grid;
    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
    text-align: right;
+
 }
 
 .image {
@@ -14,6 +15,10 @@
    height: 90%;
 }
 
+.box2 img{
+   width: 100px;
+   height:100px;
+}
 .button {
    background-color: blue;
    color: white;

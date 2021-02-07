@@ -90,8 +90,7 @@ const HandleCourses = () => {
             {coursesDB.map((course, index) => {
                 console.log(course)
                 return (
-                    <div className='courseCard' key={index}>
-                        <div className='courseBox'>
+                        <div className='courseBox' key={index}>
                             <div className="box2">
                                 <h2> {new Date(course.dates.start.seconds * 1000).toString()}</h2>
                             </div>
@@ -114,7 +113,6 @@ const HandleCourses = () => {
 
                             }}>מחק</button>
                         </div>
-                    </div>
                 )
             })}
             <button className='button' onClick={AddCourse}>+</button>
