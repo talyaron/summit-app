@@ -1,9 +1,9 @@
-import './Users.css';
+import './users.css';
 import React, {useEffect, useState} from 'react';
 import {getUsers} from "../../../control/firebase/firebase";
 import {setUser} from "../../../control/firebase/set";
 
-function Users() {
+export function Users() {
 
     let users = getUsers();
     const [filter, setFilter] = useState("none");

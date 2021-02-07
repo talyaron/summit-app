@@ -22,7 +22,7 @@ import MyCourses from './view/Pages/MyCourses/MyCourses';
 import BottomNav from './view/Components/BottomNav/BottomNav';
 import Header from './view/Components/Header/Header';
 import Calendar from "./view/Pages/Calendar/Calendar";
-
+import {Users} from "./view/Pages/handleUser/handleUser";
 
 
 
@@ -94,6 +94,9 @@ export default function App() {
           </Route>
           <Route path="/">
             <MyCourses />
+          </Route>
+          <Route path="/users">
+            <Users/>
           </Route>
 
         </Switch>
