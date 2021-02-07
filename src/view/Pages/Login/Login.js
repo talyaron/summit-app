@@ -8,13 +8,11 @@ import { loginGoogle } from '../../../control/firebase/login'
 export default function Login() {
     return (
         <div>
-            <div className="logo">
-                <img src='' alt='logo' />
-            </div>
             <div className="container">
-                <div className="centerButton">
-                    <button onClick={loginGoogle}> Join </button>
-                </div>
+                <img src='' alt='logo' />
+                <h1>Login Page</h1>
+                <button id="loginButton" onClick={loginGoogle}> Join </button>
+               
             </div>
         </div>
     )
