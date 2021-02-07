@@ -21,6 +21,8 @@ import MainCourses from './view/Pages/MainCourses/MainCourses';
 import MyCourses from './view/Pages/MyCourses/MyCourses';
 import BottomNav from './view/Components/BottomNav/BottomNav';
 import Header from './view/Components/Header/Header';
+import Calendar from "./view/Pages/Calendar/Calendar"
+
 
 
 
@@ -48,11 +50,11 @@ export default function App() {
           <ul>
 
             <li>
-              <Link to="/Login">Login</Link>
+              <Link to="/Login">התחברות</Link>
             </li>
         
             <li>
-              <Link to='/Profile'>Profile</Link>
+              <Link to='/Profile'>חשבון</Link>
             </li>
 
             
@@ -87,6 +89,10 @@ export default function App() {
           </Route>
           <Route path="/SideNav">
             <SideNav />
+          </Route>
+          
+          <Route path="/Calendar">
+            <Calendar />
           </Route>
           <Route path="/">
             <MyCourses />
