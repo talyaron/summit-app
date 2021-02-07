@@ -5,13 +5,7 @@
     width:30px; 
     padding: 5px;
    } 
-   
-.sidebar {
-    height:fit-content;
-    padding:1%;
-    border: 2px solid black
-   }
 
 .div {
-    border: 2px solid black
+    border-radius: 12px;
 }
