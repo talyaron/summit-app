@@ -79,7 +79,7 @@ const HandleCourses = () => {
     }*/
 
     return (
-        <div className='div'>
+        <div className='handleCoursesWrap'>
             <h1 >חוגים</h1>
 
 
@@ -91,8 +91,8 @@ const HandleCourses = () => {
                 console.log(course)
                 return (
                         <div className='courseBox' key={index}>
-                            <div className="box2">
-                                <h2> {new Date(course.dates.start.seconds * 1000).toString()}</h2>
+                            <div className="box2" >
+                                <h2 id="courseDate"> {new Date(course.dates.start.seconds * 1000).toString()}</h2>
                             </div>
                             <div className="box2">
                                 <h2> מדריכ\ה: {course.instructors}</h2>
@@ -103,7 +103,7 @@ const HandleCourses = () => {
                             <div className="box2">
                                 <Picture id={course.id} image={course.image} name={course.name} />
                             </div>
-                            <button onClick={() => {
+                            <button  onClick={() => {
 
                                 if (window.confirm("האם אתם בטוחים שאתם רוצים למחוק את הקורס?")) {
                                     DB.collection('courses').doc(course.id).delete()
