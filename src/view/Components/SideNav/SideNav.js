@@ -1,6 +1,6 @@
 import './SideNav.css';
 import {
-   
+
     Link
 } from "react-router-dom";
 
@@ -10,16 +10,13 @@ function SideNav() {
     return (
         <div className='sidebar'>Summit
             <div className='div'>
-                <li>
-                    <Link to='/adminCourses'><img src='https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png' class='iconDetails' />My Account</Link>
-                </li>
+                <img src='https://www.pngfind.com/pngs/m/34-349693_circled-user-icon-transparent-background-username-icon-hd.png' class='iconDetails' />
+                My Account
             </div>
             <div className='div'>
                 <li>
-                    <Link to ="/handleCourses">
-                <img src='https://cdn.icon-icons.com/icons2/1659/PNG/512/3844439-gear-setting-settings-wheel_110294.png' class='iconDetails' />
-                Manage Courses
-                </Link>
+                    <Link to='/adminCourses'><img src='https://image.flaticon.com/icons/png/512/40/40031.png' class='iconDetails' />
+                Manage Courses</Link>
                 </li>
             </div>
             <div className='div'>
