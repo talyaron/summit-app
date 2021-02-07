@@ -1,0 +1,22 @@
+Collection: users
+- Each user document needs an added field called "role" with the value of either "student" or "instructor"
+
+Collection: courses
+-Each course document must have the following fields:
+    -dates
+        -this is a map
+        -must include a field called "start" that is a date
+    -image
+        -this is a string of the src
+    -instructors
+        -this is an array of strings
+        -each string contains an instructor name for the course
+    -name
+        -this is a string that tells the name of the course
+
+-Each course document must have the following collections:
+    -lesson
+        -where each document includes the following fields: 
+            -an array called participatingStudents
+            -time
+                -this is a date

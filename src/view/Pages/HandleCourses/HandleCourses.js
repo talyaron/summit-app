@@ -114,6 +114,28 @@ const HandleCourses = () => {
 
                             }}>מחק</button>
                         </div>
+<<<<<<< HEAD
+=======
+                        <div className="box2">
+                           <h2> Instructor: {course.instructors}</h2>
+                        </div>
+                        <div className="box2">
+                           <h2> Course: {course.name}</h2>
+                        </div>
+                        <div className="box2">
+                            <Picture id={course.id} image={course.image} name={course.name}/>
+                        </div>
+                        <button id="deleteButton" onClick={() => {
+                         
+                            if (window.confirm("האם אתם בטוחים שאתם רוצים למחוק את הקורס?")) {
+                                DB.collection('courses').doc(course.id).delete()
+                                    .then(() => { console.info(`Course with id ${course.id} was deleted`) })
+                            }
+
+
+                        }}>Delete</button>
+                    </div>
+>>>>>>> dev
                     </div>
                 )
             })}
