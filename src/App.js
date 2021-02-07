@@ -21,7 +21,7 @@ import MainCourses from './view/Pages/MainCourses/MainCourses';
 import MyCourses from './view/Pages/MyCourses/MyCourses';
 import BottomNav from './view/Components/BottomNav/BottomNav';
 import Header from './view/Components/Header/Header';
-import Calendar from "./view/Pages/Calendar/Calendar"
+import Calendar from "./view/Pages/Calendar/Calendar";
 
 
 
@@ -93,6 +93,9 @@ export default function App() {
           
           <Route path="/Calendar">
             <Calendar />
+          </Route>
+          <Route path="/Login">
+            <Login />
           </Route>
           <Route path="/">
             <MyCourses />
