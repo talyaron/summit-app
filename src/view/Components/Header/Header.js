@@ -16,8 +16,8 @@ export default function Header(props) {
     }
 
     return (
-        <div className='all'>
-            מרכז סאמיט
+        <div className='all' >
+        <div id="head">   מרכז סאמיט </div> 
             <button className = 'header_button' onClick = {setShow}>=</button>
             {showNav ? <SideNav /> : null}
         </div>

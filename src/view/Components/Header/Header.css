@@ -3,6 +3,16 @@
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
+.header_button{
+    font-size: x-large;
+}
 .all{
     text-align: right;
+}
+
+#head{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
