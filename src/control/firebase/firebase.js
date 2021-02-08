@@ -11,6 +11,6 @@ export const storage = firebase.storage();
 export const DB = firebase.firestore();
 export const fb = firebase;
 
-export const getUsers =  () => DB.database().ref("/users").once('value').then((snapshot) => {
-    return snapshot.val();
+export const getUsers =  () => DB.collection("users").get().then((snapshot) => {
+    return snapshot.docs.map(doc => doc.data());
 })

@@ -65,6 +65,9 @@ export default function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/users">
+            <Users/>
+          </Route>
           <Route path="/course/:courseId">
             <Course />
           </Route >
@@ -95,9 +98,7 @@ export default function App() {
           <Route path="/">
             <MyCourses />
           </Route>
-          <Route path="/users">
-            <Users/>
-          </Route>
+
 
         </Switch>
       </div>
