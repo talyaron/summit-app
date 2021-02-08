@@ -1,32 +1,116 @@
 import { DB } from '../../../control/firebase/firebase.js';
-import {useState} from "react"
+import React, { useState } from 'react';
+import { storage } from '../../../control/firebase/firebase'
+
+import ReactDOM from "react-dom";
+import './Calendar.css';
+
+const Calendar = (props) => {
+    const { id, image, name } = props;
+    const [progress, setProgress] = useState(false)
+    const [logo, setLogo] = useState(image)
+    const [upadteImage, setUpdateImage] = useState(false)
 
 
-function Calendar() {
-    let calendar=["fff","fff"]
+    function addPicture() {
+        // document.getElementById("pictuerToAdd").click();
+    }
 
-    DB.collection("calendar").get().then(docs=>{
-        docs.forEach(doc=>{
-            calendar.push(doc.data().image)
-            console.log(doc.data().image)
-            console.log(calendar)
-        })
-    })
-    
-    return(
-        <div>
-            <h1>Calendar</h1>
-            <div>
-            {calendar.map((doc,index)=>{
-                console.log("hello")
-                console.log(doc+"hello")
-                return(<div><img src={doc} key={index}/></div>)
-                })   
-            }
+    // functions
+
+    function getImage(event) {
+        try {
+            // imageToUpload = image.target.files[0];
+            const ref = storage.ref("/courses/" + id);
+            const image = event.target.files[0];
+            // const name = image.name;
+            const metadata = {
+                contentType: image.type
+            };
+
+            const uploadImg = ref.put(image, metadata)
+
+
+            console.log(uploadImg)
+            uploadImg.on('state_changed', snapshot => {
+                console.log((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+                setProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+
+
+
+            }, e => {
+                console.error(e)
+                setProgress(false);
+
+            }, () => { //when finshed upload
+
+                uploadImg.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+
+                    setLogo(downloadURL);
+
+                    DB.collection('calendar').doc('calendar').update({ image: downloadURL })
+                        .then(() => {
+                            setLogo(downloadURL);
+                            setProgress(false);
+                            setUpdateImage(false)
+                        })
+                });
+            })
+        } catch (e) {
+            console.error(e);
+            setProgress(false);
+            setUpdateImage(false)
+        }
+    }
+
+    if (!upadteImage) {
+        return (
+            <div className='imageHolder'>
+
+                {
+                    logo ? (
+                        <div style={{backgroundImage: `url(${logo})`}} className="imgOption" alt={`course ${name}`} onClick={()=>{setUpdateImage(true)}}/>
+                    ) : (<button className = "uploadButton" onClick={()=>{setUpdateImage(true)}}>הוסיפו תמונה</button>)
+
+                }
             </div>
-        </div>
-        
-    )
+        )
+    } else {
+        return (
+            <div className='imageHolder'>
+                {
+                    !progress ?
+                        <div className="addPicturesPanel" onClick={addPicture} >
+                            <input
+                                type="file"
+                                className="addPicture"
+                                id="pictuerToAdd"
+                                onClick={() => { }}
+                                onChange={event => {
+                                    getImage(event);
+                                }}
+                            ></input>
+                        </div>
+                        :
+                        <div className='uploader'>
+                            <div style={{ width: `${progress}%` }} />
+                        </div>
+                }
+                <div className = 'calendarImg'>
+                    <img src = {DB.collection('calendar').doc('calendar')}></img>
+
+                </div>
+            </div>
+
+        )
+    }
+
+
+
+
 }
+
+
+
 
 export default Calendar
