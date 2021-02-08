@@ -48,7 +48,7 @@ export function Users() {
 
                         <a href="#public" onClick={e => {
                             e.preventDefault()
-                            setFilter("public")
+                            setFilter("public");
                         }} public>
                         </a>
 

@@ -43,6 +43,13 @@ function listenToAllCourses(setCoursesList) {
         coursesDB.forEach(courseDB=>{
             const courseObj = courseDB.data();
             courseObj.courseId = courseDB.id;
+            if({}.hasOwnProperty.call(courseObj, 'instructors') ){
+                if(typeof courseObj.instructors === 'string'){
+                    console.log(courseObj)
+                    courseObj.instructors=[]; 
+                   
+                } 
+            }
             coursesTemp.push(courseObj)
         })
         setCoursesList(coursesTemp)
